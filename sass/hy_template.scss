@@ -1,0 +1,92 @@
+@font-face {
+	font-family: 'Noto Sans CJK JP';
+	src: url(../font/NotoSansCJKjp-Thin.otf);
+}
+
+$header:  "Noto Sans CJK JP", sans-serif;
+
+$black: rgba(0,0,0,1);
+$white: rgba(255,255,255,1);
+
+$length-0: 0;
+$length-1: 8px;
+$length-3: 24px;
+$length-5: 40px;
+$length-7: 56px;
+$length-9: 72px;
+$length-11: 88px;
+$length-24: 196px;
+$length-32: 256px;
+
+.hy-top-menu{
+	position: relative;
+	background-color:  $black;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: $length-9;
+
+	color: $white;
+	font-family: $header;
+
+	.logo{
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		padding: $length-1;
+		height: $length-7;
+		min-width: $length-24;
+
+		img{
+			position:relative;
+			display:inline-block;
+			height: $length-7;
+		}
+
+		span{
+			position:absolute;
+			line-height: $length-7;
+			font-size: $length-3;
+			color: $white;
+		}
+	}
+
+	.center-menu{
+		position:absolute;
+		margin: auto;
+		left: 0;
+		right: 0;
+		height: $length-7;
+		padding: $length-1;
+		text-align: center;
+		a{
+			display: inline-table;
+			position:relative;
+			height: $length-7;
+			line-height: $length-7;
+			width: $length-11;
+			color: $white;
+			text-decoration: none;
+		}
+	}
+
+	.right-menu{
+		position:absolute;
+		margin: auto;
+		right:0;
+		padding: $length-1;
+		height: $length-7;
+		min-width: $length-24;
+		a{
+			display: inline-table;
+			height: $length-7;
+			position: absolute;
+			img{
+				position:absolute;
+				display:inline-block;
+				height: $length-7;
+			}
+		}
+	}
+
+}
