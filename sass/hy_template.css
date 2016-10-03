@@ -9,6 +9,9 @@
   left: 0;
   right: 0;
   height: 72px;
+  min-width: 1024px;
+  padding-left: 16px;
+  padding-right: 16px;
   color: white;
   font-family: "Noto Sans CJK JP", sans-serif;
 }
@@ -49,6 +52,19 @@
   color: white;
   text-decoration: none;
 }
+.hy-top-menu .center-menu a:hover {
+  border-bottom: 8px solid #de1500;
+}
+.hy-top-menu .center-menu a:after {
+  position: absolute;
+  content: attr(data-sub);
+  left: 0;
+  top: 16px;
+  right: 0;
+  text-align: center;
+  font-size: 8px;
+  color: #a0a0a0;
+}
 .hy-top-menu .right-menu {
   position: absolute;
   margin: auto;
@@ -60,12 +76,76 @@
 .hy-top-menu .right-menu a {
   display: inline-table;
   height: 56px;
-  position: absolute;
+  position: relative;
 }
 .hy-top-menu .right-menu a img {
   position: absolute;
   display: inline-block;
   height: 56px;
+}
+.hy-top-menu .right-menu a img + span {
+  margin-left: 56px;
+}
+.hy-top-menu .right-menu a span {
+  position: relative;
+  line-height: 56px;
+  color: white;
+}
+
+.hy-main {
+  display: block;
+  position: relative;
+  font-family: "Noto Sans CJK JP", sans-serif;
+  min-width: 1024px;
+  background-color: white;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.hy-main > * {
+  position: relative;
+  display: block;
+  min-width: 1024px;
+  width: 1024px;
+  margin: auto;
+  left: 0;
+  right: 0;
+}
+
+.hy-footer {
+  position: relative;
+  font-family: "Noto Sans CJK JP", sans-serif;
+  background-color: black;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 16px;
+  padding-right: 16px;
+  min-width: 1024px;
+}
+.hy-footer > ul {
+  display: inline-table;
+  position: relative;
+  width: 88px;
+}
+.hy-footer > ul a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+.hy-footer > div.link {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+}
+.hy-footer > div.link a {
+  display: inline-table;
+  color: white;
+  text-decoration: none;
+  height: 40px;
+}
+.hy-footer > div.link img {
+  height: 40px;
 }
 
 /*# sourceMappingURL=hy_template.css.map */

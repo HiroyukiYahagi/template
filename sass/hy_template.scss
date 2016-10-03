@@ -6,10 +6,13 @@
 $header:  "Noto Sans CJK JP", sans-serif;
 
 $black: rgba(0,0,0,1);
+$lightGrey: rgba(160,160,160,1);
 $white: rgba(255,255,255,1);
+$highLigtht: rgba(222,21,0,1);
 
 $length-0: 0;
 $length-1: 8px;
+$length-2: 16px;
 $length-3: 24px;
 $length-5: 40px;
 $length-7: 56px;
@@ -17,19 +20,25 @@ $length-9: 72px;
 $length-11: 88px;
 $length-24: 196px;
 $length-32: 256px;
+$length-128: 1024px;
 
-.hy-top-menu{
+.hy-top-menu {
 	position: relative;
 	background-color:  $black;
 	top: 0;
 	left: 0;
 	right: 0;
 	height: $length-9;
+	min-width: $length-128;
+	padding: {
+		left:$length-2;
+		right:$length-2;
+	}
 
 	color: $white;
 	font-family: $header;
 
-	.logo{
+	.logo {
 		display: inline-block;
 		position: absolute;
 		left: 0;
@@ -37,13 +46,13 @@ $length-32: 256px;
 		height: $length-7;
 		min-width: $length-24;
 
-		img{
+		img {
 			position:relative;
 			display:inline-block;
 			height: $length-7;
 		}
 
-		span{
+		span {
 			position:absolute;
 			line-height: $length-7;
 			font-size: $length-3;
@@ -51,7 +60,7 @@ $length-32: 256px;
 		}
 	}
 
-	.center-menu{
+	.center-menu {
 		position:absolute;
 		margin: auto;
 		left: 0;
@@ -59,7 +68,7 @@ $length-32: 256px;
 		height: $length-7;
 		padding: $length-1;
 		text-align: center;
-		a{
+		a {
 			display: inline-table;
 			position:relative;
 			height: $length-7;
@@ -67,26 +76,129 @@ $length-32: 256px;
 			width: $length-11;
 			color: $white;
 			text-decoration: none;
+
+			&:hover {
+				border:{
+					bottom: $length-1 solid $highLigtht
+				}
+			}
+
+			&:after {
+				position: absolute;
+				content: attr(data-sub);
+				left: 0;
+				top: $length-2;
+				right: 0;
+				text-align: center;
+				font-size: $length-1;
+				color: $lightGrey;
+			}
 		}
 	}
 
-	.right-menu{
+	.right-menu {
 		position:absolute;
 		margin: auto;
 		right:0;
 		padding: $length-1;
 		height: $length-7;
 		min-width: $length-24;
-		a{
+		a {
 			display: inline-table;
 			height: $length-7;
-			position: absolute;
-			img{
+			position: relative;
+			img {
 				position:absolute;
 				display:inline-block;
 				height: $length-7;
+				& + span {
+					margin-left: $length-7;
+				}
+			}
+			span {
+				position:relative;
+				line-height: $length-7;
+				color: $white;
 			}
 		}
 	}
-
 }
+
+
+
+.hy-main {
+	display: block;
+	position: relative;
+	font-family: $header;
+	min-width: $length-128;
+
+	background: {
+		color: $white;
+	}
+	padding: {
+		top:$length-2;
+		bottom:$length-2;
+		left:$length-2;
+		right:$length-2;
+	}
+
+	& > * {
+		position: relative;
+		display: block;
+		min-width: $length-128;
+		width: $length-128;
+		margin: auto;
+		left: 0;
+		right: 0;
+	}
+}
+
+
+.hy-footer {
+	position: relative;
+	font-family: $header;
+
+	background: {
+		color: $black;
+	}
+	padding: {
+		top:$length-5;
+		bottom:$length-5;
+		left:$length-2;
+		right:$length-2;
+	}
+
+	min-width: $length-128;
+
+	& > ul {
+		display: inline-table;
+		position: relative;
+		width:$length-11;
+
+		& a {
+			color: $white;
+			text-decoration: none;
+			font-size: $length-2;
+		}
+	}
+
+	& > div.link {
+		position: absolute;
+		right: $length-2;
+		bottom: $length-2;
+
+		& a {
+			display: inline-table;
+			color: $white;
+			text-decoration: none;
+			height: $length-5;
+		}
+
+		& img {
+			height: $length-5;
+		}
+	}
+}
+
+
+

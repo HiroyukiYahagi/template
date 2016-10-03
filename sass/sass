@@ -1,0 +1,1 @@
+sass --watch hy_template.sass --style expanded
