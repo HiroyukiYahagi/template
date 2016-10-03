@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8"/>
 	<title>テンプレート集</title>
 	<link rel="stylesheet" type="text/css" href="sass/hy_template.css">
 	<script src="js/hy_template.js" type="text/javascript" charset="utf-8" async defer></script>
@@ -9,6 +10,9 @@
 		div.content{
 			position: relative;
 			margin:10px;
+			padding: 10px;
+			border: 1px solid black;
+			background-color: #F0EFEF;
 		}	
 	</style>
 </head>
@@ -18,14 +22,14 @@
 	<hr/>
 
 	<h2>目次</h2>
-	<ul>
+	<ol>
 		<li>基本ルール</li>
 		<li>レイアウト</li>
 		<li>フォーム</li>
 		<li>色</li>
 		<li>文字</li>
 		<li>コンポーネント</li>
-	</ul>
+	</ol>
 
 	<hr/>
 
@@ -48,7 +52,7 @@
 	<ul>
 		<li>
 			<h3>トップメニュー</h3>
-			<p>クラス名</p>
+			<p>hy-top-menu</p>
 			<div class="content">
 
 				<div class="hy-top-menu">
@@ -57,7 +61,7 @@
 						<a href="#">MENU 2</a>
 						<a href="#">MENU 3</a>
 						<a href="#">MENU 4</a>
-						<a href="#" data-sub="SUB">
+						<a href="#" data-sub="SUB MSG">
 							MENU 5
 						</a>
 					</div>
@@ -66,10 +70,12 @@
 						<span>BRAND</span>
 					</a>
 					<div class="right-menu">
-						<a href="#">MENU 1</a>
+						<a href="#">
+							<span>MENU 1</span>
+						</a>
 						<a href="#" data-sub="SUB">
 							<img src="img/logo.png" alt="">
-							MENU 1
+							<span>MENU 1</span>
 						</a>
 					</div>
 				</div>
@@ -77,20 +83,109 @@
 			</div>
 		</li>
 		<li>
-			<h3>トップメニュー</h3>
-			<p>クラス名</p>
+			<h3>メイン領域</h3>
+			<p>hy-main</p>
 			<div class="content">
 				
+				<div class= "hy-main">
+					<div>
+						ここにコンテンツが入ります
+					</div>
+				</div>
+
 			</div>
 		</li>
 		<li>
-			<h3>トップメニュー</h3>
-			<p>クラス名</p>
+			<h3>フッター領域</h3>
+			<p>hy-footer</p>
 			<div class="content">
-				
+				<div class="hy-footer">
+					<ul>
+						<li>
+							<a href="#">Menu 1</a>
+						</li>
+						<li>
+							<a href="#">Menu 1</a>
+						</li>
+						<li>
+							<a href="#">Menu 1</a>
+						</li>
+						<li>
+							<a href="#">Menu 1</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="#">Menu 1</a>
+						</li>
+						<li>
+							<a href="#">Menu 1</a>
+						</li>
+					</ul>
+					<ul>
+						<li>
+							<a href="#">Menu 1</a>
+						</li>
+						<li>
+							<a href="#">Menu 1</a>
+						</li>
+						<li>
+							<a href="#">Menu 1</a>
+						</li>
+					</ul>
+					<div class="link">
+						<a href="#">
+							<img src="img/logo.png" alt="">
+						</a>
+						<a href="#">Facebook</a>
+						<a href="#">Twitter</a>
+					</div>
+				</div>
 			</div>
 		</li>
 	</ul>
+
+
+
+	<hr/>
+
+	<h2>フォーム</h2>
+	<ul>
+		<li>
+			<h3>トップメニュー</h3>
+			<p>hy-top-menu</p>
+			<div class="content">
+			</div>
+		</li>
+	</ul>
+
+
+	<hr/>
+
+	<h2></h2>
+	<ul>
+		<li>
+			<h3>トップメニュー</h3>
+			<p>hy-top-menu</p>
+			<div class="content">
+			</div>
+		</li>
+	</ul>
+
+
+	<hr/>
+
+	<h2>レイアウト</h2>
+	<ul>
+		<li>
+			<h3>トップメニュー</h3>
+			<p>hy-top-menu</p>
+			<div class="content">
+			</div>
+		</li>
+	</ul>
+
+
 
 </body>
 </html>
