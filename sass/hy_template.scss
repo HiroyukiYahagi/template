@@ -2,13 +2,26 @@
 	font-family: 'Noto Sans CJK JP';
 	src: url(../font/NotoSansCJKjp-Thin.otf);
 }
+@font-face {
+	font-family: 'Noto Sans CJK JP Bold';
+	src: url(../font/NotoSansCJKjp-Bold.otf);
+}
 
-$header:  "Noto Sans CJK JP", sans-serif;
+$font: "Noto Sans CJK JP", sans-serif;
+$headerFont: "Noto Sans CJK JP Bold", sans-serif;
 
 $black: rgba(0,0,0,1);
+$darkGrey: rgba(80,80,80,1);
 $lightGrey: rgba(160,160,160,1);
 $white: rgba(255,255,255,1);
-$highLigtht: rgba(222,21,0,1);
+
+$highLight: rgba(222,21,0,1);
+$oppositeLight: rgba(0,179,222,1);
+
+$clear: rgba(0,0,0,0);
+
+$formRadius: 2px;
+$cover: rgba(0,0,0,0.5);
 
 $length-0: 0;
 $length-1: 8px;
@@ -20,7 +33,78 @@ $length-9: 72px;
 $length-11: 88px;
 $length-24: 196px;
 $length-32: 256px;
+$length-50: 400px;
 $length-128: 1024px;
+
+* {
+	font-family: $font;
+}
+
+.black-text{
+	color:$black;
+}
+.darkgrey-text{
+	color:$darkGrey;
+}
+.lightgrey-text{
+	color:$lightGrey;
+}
+.highlight-text{
+	color:$highLight;
+}
+.oppositelight-text{
+	color:$oppositeLight;
+}
+.white-text{
+	color:$white;
+}
+.black{
+	background-color: $black;
+}
+.darkgrey{
+	background-color: $darkGrey;
+}
+.lightgrey{
+	background-color: $lightGrey;
+}
+.highlight{
+	background-color: $highLight;
+}
+.oppositelight{
+	background-color: $oppositeLight;
+}
+.white{
+	background-color: $white;
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		font: {
+			family: $headerFont;
+			weight: bold;
+			size: #{(40 - $i * 3)}px;  
+		}
+		margin: {
+			top: #{( 10 - $i ) * 2}px;
+			bottom: $length-1; 
+		}
+	}
+}
+
+p {
+	font: {
+		size: $length-2;  
+	}
+	margin: {
+		top: $length-1;
+		bottom: $length-1; 
+	}
+}
+
+@mixin transition {
+	-webkit-transition: all .3s;
+	transition: all .3s;
+}
 
 .hy-top-menu {
 	position: relative;
@@ -36,7 +120,6 @@ $length-128: 1024px;
 	}
 
 	color: $white;
-	font-family: $header;
 
 	.logo {
 		display: inline-block;
@@ -79,7 +162,7 @@ $length-128: 1024px;
 
 			&:hover {
 				border:{
-					bottom: $length-1 solid $highLigtht
+					bottom: $length-1 solid $highLight
 				}
 			}
 
@@ -129,7 +212,6 @@ $length-128: 1024px;
 .hy-main {
 	display: block;
 	position: relative;
-	font-family: $header;
 	min-width: $length-128;
 
 	background: {
@@ -156,7 +238,6 @@ $length-128: 1024px;
 
 .hy-footer {
 	position: relative;
-	font-family: $header;
 
 	background: {
 		color: $black;
@@ -170,35 +251,212 @@ $length-128: 1024px;
 
 	min-width: $length-128;
 
-	& > ul {
-		display: inline-table;
+
+	& > div {
 		position: relative;
-		width:$length-11;
+		display: block;
+		min-width: $length-128;
+		width: $length-128;
+		margin: auto;
+		left: 0;
+		right: 0;
+		color: $white;
 
-		& a {
-			color: $white;
-			text-decoration: none;
-			font-size: $length-2;
-		}
-	}
-
-	& > div.link {
-		position: absolute;
-		right: $length-2;
-		bottom: $length-2;
-
-		& a {
+		& > ul {
 			display: inline-table;
-			color: $white;
-			text-decoration: none;
-			height: $length-5;
+			position: relative;
+			width:$length-24;
+			list-style-type:none;
+			padding : {
+				left: 0;
+			}
+
+			& a {
+				color: $white;
+				text-decoration: none;
+				font-size: $length-2;
+			}
 		}
 
-		& img {
-			height: $length-5;
+		& > div.link {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+
+			& a {
+				display: inline-table;
+				color: $white;
+				text-decoration: none;
+			}
 		}
+
 	}
 }
+
+
+.hy-form-text{
+
+    position: relative;
+    display: inline-block;
+
+	& > input[type="text"],
+	& > input[type="email"],
+	& > input[type="password"],
+	& > input[type="number"],
+	& > input[type="date"],
+	& > textarea{
+	    min-width: $length-50;
+	    min-height: $length-5;
+	    border: 1px $darkGrey;
+
+	    border-radius:$formRadius;
+
+	    padding: {
+	    	left: $length-1;
+	    	right: $length-1;
+	    }
+	    -moz-box-shadow: inset 0 0 4px rgba(0,0,0,0.2);
+		-webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+		box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
+
+		outline:none;
+
+		&:focus {
+		    border:solid 1px $oppositeLight;
+		}
+	}
+
+	& > input[type="date"] {
+		min-width: $length-11;	
+	}
+}
+
+.hy-form-text-label{
+	@extend .hy-form-text;
+
+	margin: {
+		top: $length-3;
+	}
+
+	& > label{
+	    display: block;
+	    position: absolute;
+	    top: -1 * $length-3;
+	    font-weight: bolder;
+	    font-size: $length-2 - 4;
+	}
+}
+
+
+@mixin hy-form-button($main:$black, $sub:$white){
+	background-color: $main;
+	border: 1px solid $main;
+	border-radius: $formRadius;
+	color: $sub;
+
+	&:hover{
+		background-color: $sub;
+		border-color: $main;
+		color: $main;
+	}
+}
+
+.hy-form-button {
+	@include hy-form-button($darkGrey, $white);
+	&.main {
+		@include hy-form-button($highLight, $white);
+	}
+	&.sub {
+		@include hy-form-button($oppositeLight, $white);
+	}
+
+	display: inline-block;
+	min-width: $length-24;
+	min-height: $length-5;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	line-height: $length-5;
+
+	&::before,
+	&::after {
+		position: absolute;
+		z-index: -1;
+		display: block;
+		content: '';
+	}
+	&,
+	&::before,
+	&::after{
+		@include transition;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
+button.hy-form-button{
+	padding:0;
+}
+
+.hy-form-text-button{
+	@extend .hy-form-text;
+
+	& > input[type="text"] {
+	    margin-right: -4px;
+	    border-radius: $formRadius 0px 0px $formRadius;	
+	}
+
+	& > button {
+		@extend .hy-form-button;
+		min-width: 0;
+		border-radius: 0px $formRadius $formRadius 0px;
+	}
+}
+
+.hy-hoverable-image{
+	@include transition;
+
+	position: relative;
+    display: inline-block;
+
+	& > img{
+
+	}
+
+	& > div{
+		@include transition;
+		display: inline-block;
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background-color: $clear;
+		color: $clear;
+
+		& > .main{
+		    display: block;
+		    position: absolute;
+		    bottom: $length-7;
+		    left: $length-1;
+		}
+		& > .sub{
+		    display: block;
+		    position: absolute;
+		    bottom: $length-1;
+		    left: $length-1;
+		}
+	}
+
+	&:hover > div{
+		background-color: $cover;
+		color: $white;
+	}
+
+}
+
+
+
+
 
 
 

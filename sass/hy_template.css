@@ -2,6 +2,116 @@
   font-family: 'Noto Sans CJK JP';
   src: url(../font/NotoSansCJKjp-Thin.otf);
 }
+@font-face {
+  font-family: 'Noto Sans CJK JP Bold';
+  src: url(../font/NotoSansCJKjp-Bold.otf);
+}
+* {
+  font-family: "Noto Sans CJK JP", sans-serif;
+}
+
+.black-text {
+  color: black;
+}
+
+.darkgrey-text {
+  color: #505050;
+}
+
+.lightgrey-text {
+  color: #a0a0a0;
+}
+
+.highlight-text {
+  color: #de1500;
+}
+
+.oppositelight-text {
+  color: #00b3de;
+}
+
+.white-text {
+  color: white;
+}
+
+.black {
+  background-color: black;
+}
+
+.darkgrey {
+  background-color: #505050;
+}
+
+.lightgrey {
+  background-color: #a0a0a0;
+}
+
+.highlight {
+  background-color: #de1500;
+}
+
+.oppositelight {
+  background-color: #00b3de;
+}
+
+.white {
+  background-color: white;
+}
+
+h1 {
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
+  font-weight: bold;
+  font-size: 37px;
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
+  font-weight: bold;
+  font-size: 34px;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+h3 {
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
+  font-weight: bold;
+  font-size: 31px;
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+
+h4 {
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
+  font-weight: bold;
+  font-size: 28px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+h5 {
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 8px;
+}
+
+h6 {
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
+  font-weight: bold;
+  font-size: 22px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+p {
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
 .hy-top-menu {
   position: relative;
   background-color: black;
@@ -13,7 +123,6 @@
   padding-left: 16px;
   padding-right: 16px;
   color: white;
-  font-family: "Noto Sans CJK JP", sans-serif;
 }
 .hy-top-menu .logo {
   display: inline-block;
@@ -95,7 +204,6 @@
 .hy-main {
   display: block;
   position: relative;
-  font-family: "Noto Sans CJK JP", sans-serif;
   min-width: 1024px;
   background-color: white;
   padding-top: 16px;
@@ -115,7 +223,6 @@
 
 .hy-footer {
   position: relative;
-  font-family: "Noto Sans CJK JP", sans-serif;
   background-color: black;
   padding-top: 40px;
   padding-bottom: 40px;
@@ -123,29 +230,172 @@
   padding-right: 16px;
   min-width: 1024px;
 }
-.hy-footer > ul {
+.hy-footer > div {
+  position: relative;
+  display: block;
+  min-width: 1024px;
+  width: 1024px;
+  margin: auto;
+  left: 0;
+  right: 0;
+  color: white;
+}
+.hy-footer > div > ul {
   display: inline-table;
   position: relative;
-  width: 88px;
+  width: 196px;
+  list-style-type: none;
+  padding-left: 0;
 }
-.hy-footer > ul a {
+.hy-footer > div > ul a {
   color: white;
   text-decoration: none;
   font-size: 16px;
 }
-.hy-footer > div.link {
+.hy-footer > div > div.link {
   position: absolute;
-  right: 16px;
-  bottom: 16px;
+  right: 0;
+  bottom: 0;
 }
-.hy-footer > div.link a {
+.hy-footer > div > div.link a {
   display: inline-table;
   color: white;
   text-decoration: none;
-  height: 40px;
 }
-.hy-footer > div.link img {
-  height: 40px;
+
+.hy-form-text, .hy-form-text-label, .hy-form-text-button {
+  position: relative;
+  display: inline-block;
+}
+.hy-form-text > input[type="text"], .hy-form-text-label > input[type="text"], .hy-form-text-button > input[type="text"], .hy-form-text > input[type="email"], .hy-form-text-label > input[type="email"], .hy-form-text-button > input[type="email"], .hy-form-text > input[type="password"], .hy-form-text-label > input[type="password"], .hy-form-text-button > input[type="password"], .hy-form-text > input[type="number"], .hy-form-text-label > input[type="number"], .hy-form-text-button > input[type="number"], .hy-form-text > input[type="date"], .hy-form-text-label > input[type="date"], .hy-form-text-button > input[type="date"], .hy-form-text > textarea, .hy-form-text-label > textarea, .hy-form-text-button > textarea {
+  min-width: 400px;
+  min-height: 40px;
+  border: 1px #505050;
+  border-radius: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  -moz-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.2);
+  box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+.hy-form-text > input[type="text"]:focus, .hy-form-text-label > input[type="text"]:focus, .hy-form-text-button > input[type="text"]:focus, .hy-form-text > input[type="email"]:focus, .hy-form-text-label > input[type="email"]:focus, .hy-form-text-button > input[type="email"]:focus, .hy-form-text > input[type="password"]:focus, .hy-form-text-label > input[type="password"]:focus, .hy-form-text-button > input[type="password"]:focus, .hy-form-text > input[type="number"]:focus, .hy-form-text-label > input[type="number"]:focus, .hy-form-text-button > input[type="number"]:focus, .hy-form-text > input[type="date"]:focus, .hy-form-text-label > input[type="date"]:focus, .hy-form-text-button > input[type="date"]:focus, .hy-form-text > textarea:focus, .hy-form-text-label > textarea:focus, .hy-form-text-button > textarea:focus {
+  border: solid 1px #00b3de;
+}
+.hy-form-text > input[type="date"], .hy-form-text-label > input[type="date"], .hy-form-text-button > input[type="date"] {
+  min-width: 88px;
+}
+
+.hy-form-text-label {
+  margin-top: 24px;
+}
+.hy-form-text-label > label {
+  display: block;
+  position: absolute;
+  top: -24px;
+  font-weight: bolder;
+  font-size: 12px;
+}
+
+.hy-form-button, .hy-form-text-button > button {
+  background-color: #505050;
+  border: 1px solid #505050;
+  border-radius: 2px;
+  color: white;
+  display: inline-block;
+  min-width: 196px;
+  min-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  line-height: 40px;
+}
+.hy-form-button:hover, .hy-form-text-button > button:hover {
+  background-color: white;
+  border-color: #505050;
+  color: #505050;
+}
+.hy-form-button.main, .hy-form-text-button > button.main {
+  background-color: #de1500;
+  border: 1px solid #de1500;
+  border-radius: 2px;
+  color: white;
+}
+.hy-form-button.main:hover, .hy-form-text-button > button.main:hover {
+  background-color: white;
+  border-color: #de1500;
+  color: #de1500;
+}
+.hy-form-button.sub, .hy-form-text-button > button.sub {
+  background-color: #00b3de;
+  border: 1px solid #00b3de;
+  border-radius: 2px;
+  color: white;
+}
+.hy-form-button.sub:hover, .hy-form-text-button > button.sub:hover {
+  background-color: white;
+  border-color: #00b3de;
+  color: #00b3de;
+}
+.hy-form-button::before, .hy-form-text-button > button::before, .hy-form-button::after, .hy-form-text-button > button::after {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  content: '';
+}
+.hy-form-button, .hy-form-text-button > button, .hy-form-button::before, .hy-form-text-button > button::before, .hy-form-button::after, .hy-form-text-button > button::after {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+button.hy-form-button, .hy-form-text-button > button {
+  padding: 0;
+}
+
+.hy-form-text-button > input[type="text"] {
+  margin-right: -4px;
+  border-radius: 2px 0px 0px 2px;
+}
+.hy-form-text-button > button {
+  min-width: 0;
+  border-radius: 0px 2px 2px 0px;
+}
+
+.hy-hoverable-image {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  position: relative;
+  display: inline-block;
+}
+.hy-hoverable-image > div {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  color: transparent;
+}
+.hy-hoverable-image > div > .main {
+  display: block;
+  position: absolute;
+  bottom: 56px;
+  left: 8px;
+}
+.hy-hoverable-image > div > .sub {
+  display: block;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+}
+.hy-hoverable-image:hover > div {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 
 /*# sourceMappingURL=hy_template.css.map */
