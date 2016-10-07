@@ -3,7 +3,14 @@
 <head>
 	<meta charset="utf-8"/>
 	<title>テンプレート集</title>
+
+	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
 	<link rel="stylesheet" type="text/css" href="sass/hy_template.css">
+
+ 	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<script src="js/slick.min.js" type="text/javascript" charset="utf-8" async defer></script> 
+
 	<script src="js/hy_template.js" type="text/javascript" charset="utf-8" async defer></script>
 
 	<style type="text/css" media="screen">
@@ -220,12 +227,18 @@
 			</div>
 		</li>
 		<li>
+			<h3>AjaxLink</h3>
+			<p>hy-top-menu</p>
+			<div class="content">
+			</div>
+		</li>
+		<li>
 			<h3>ファイルアップローダー</h3>
 			<p>hy-form-file</p>
 			<div class="content">
 				<form>
 					<div class="hy-form-file">
-					準備中
+						準備中
 					</div>
 				</form>
 			</div>
@@ -269,7 +282,7 @@
 	<h2>header</h2>
 	<ul>
 		<li>
-			<h3>hoverable image</h3>
+			<h3>Header And Paragraph</h3>
 			<p>h1 ~ h6 p</p>
 			<div class="content">
 				<h1>h1</h1>
@@ -303,30 +316,219 @@
 						</p>
 					</div>
 				</div>
+				<div class="hy-hoverable-image new">
+					<img src="./img/cat.jpg"/>
+					<div>
+						<h3 class="main">
+							main message
+						</h3>
+						<p class="sub">
+							sub message
+						</p>
+					</div>
+				</div>
 			</div>
 		</li>
 		<li>
 			<h3>カード</h3>
 			<p>hy-card</p>
 			<div class="content">
+				<a class="hy-card" href="#">
+					<span>
+						<img src="img/cat.jpg">
+					</span>
+					<div class="cover">
+						<h3 class="main">
+							main message
+						</h3>
+						<p class="sub">
+							sub message
+						</p>
+					</div>
+					<div class="message">
+						<h4>Title</h4>
+						<span>SubTitle</span>
+					</div>
+				</a>
+				<a class="hy-card new" href="#">
+					<span>
+						<img src="img/cat.jpg">
+					</span>
+					<div class="cover">
+						<h3 class="main">
+							main message
+						</h3>
+						<p class="sub">
+							sub message
+						</p>
+					</div>
+					<div class="message">
+						<h4>Title</h4>
+						<span>SubTitle</span>
+					</div>
+				</a>
 			</div>
 		</li>
 		<li>
 			<h3>敷き詰める奴</h3>
 			<p>hy-img-card-layout</p>
 			<div class="content">
+				<div class="hy-img-card-layout">
+					<a class="hy-card" href="#">
+						<span>
+							<img src="img/cat.jpg">
+						</span>
+						<div class="cover">
+							<h3 class="main">
+								main message
+							</h3>
+							<p class="sub">
+								sub message
+							</p>
+						</div>
+						<div class="message">
+							<h4>Title</h4>
+							<span>SubTitle</span>
+						</div>
+					</a>
+					<a class="hy-card" href="#">
+						<span>
+							<img src="img/cat.jpg">
+						</span>
+						<div class="cover">
+							<h3 class="main">
+								main message
+							</h3>
+							<p class="sub">
+								sub message
+							</p>
+						</div>
+						<div class="message">
+							<h4>Title</h4>
+							<span>SubTitle</span>
+						</div>
+					</a>
+					<a class="hy-card" href="#">
+						<span>
+							<img src="img/cat.jpg">
+						</span>
+						<div class="cover">
+							<h3 class="main">
+								main message
+							</h3>
+							<p class="sub">
+								sub message
+							</p>
+						</div>
+						<div class="message">
+							<h4>Title</h4>
+							<span>SubTitle</span>
+						</div>
+					</a>
+					<a class="hy-card" href="#">
+						<span>
+							<img src="img/cat.jpg">
+						</span>
+						<div class="cover">
+							<h3 class="main">
+								main message
+							</h3>
+							<p class="sub">
+								sub message
+							</p>
+						</div>
+						<div class="message">
+							<h4>Title</h4>
+							<span>SubTitle</span>
+						</div>
+					</a>
+					<a class="hy-card" href="#">
+						<span>
+							<img src="img/cat.jpg">
+						</span>
+						<div class="cover">
+							<h3 class="main">
+								main message
+							</h3>
+							<p class="sub">
+								sub message
+							</p>
+						</div>
+						<div class="message">
+							<h4>Title</h4>
+							<span>SubTitle</span>
+						</div>
+					</a>
+					<a class="hy-card" href="#">
+						<span>
+							<img src="img/cat.jpg">
+						</span>
+						<div class="cover">
+							<h3 class="main">
+								main message
+							</h3>
+							<p class="sub">
+								sub message
+							</p>
+						</div>
+						<div class="message">
+							<h4>Title</h4>
+							<span>SubTitle</span>
+						</div>
+					</a>
+					<a class="hy-card" href="#">
+						<span>
+							<img src="img/cat.jpg">
+						</span>
+						<div class="cover">
+							<h3 class="main">
+								main message
+							</h3>
+							<p class="sub">
+								sub message
+							</p>
+						</div>
+						<div class="message">
+							<h4>Title</h4>
+							<span>SubTitle</span>
+						</div>
+					</a>
+				</div>
 			</div>
 		</li>
 		<li>
 			<h3>icons</h3>
-			<p>hy-top-menu</p>
+			<p>hy-icons</p>
 			<div class="content">
+				<span class="hy-icon-large">
+					<img src="img/cat.jpg">
+				</span>
+				<span class="hy-icon-medium">
+					<img src="img/cat.jpg">
+				</span>
 			</div>
 		</li>
 		<li>
 			<h3>carusel</h3>
-			<p>hy-top-menu</p>
+			<p>slider</p>
 			<div class="content">
+				<div class="center slider">
+			    	<a href="#">
+			     		<img src="http://placehold.it/350x300?text=1">
+			   		</a>
+			   		<a href="#">
+			     		<img src="http://placehold.it/350x300?text=2">
+			   		</a>
+			   		<a href="#">
+			     		<img src="http://placehold.it/350x300?text=3">
+			   		</a>
+			   		<a href="#">
+			     		<img src="http://placehold.it/350x300?text=4">
+			   		</a>
+			   		<a href="#">
+			     		<img src="http://placehold.it/350x300?text=5">
+			   		</a>
+				</div>
 			</div>
 		</li>
 		<li>
@@ -336,14 +538,81 @@
 			</div>
 		</li>
 		<li>
-			<h3>pagenate</h3>
+			<h3>Tab</h3>
 			<p>hy-top-menu</p>
 			<div class="content">
+			</div>
+		</li>
+		<li>
+			<h3>Flush</h3>
+			<p>hy-top-menu</p>
+			<div class="content">
+			</div>
+		</li>
+		<li>
+			<h3>pagenate</h3>
+			<p>hy-pagenate</p>
+			<div class="content">
+				<div class="hy-pagenate">
+					<a class="prev" href="#">Previous</a>
+					<a class="jump" href="#">1</a>
+					<a class="jump" href="#">2</a>
+					<a class="jump" href="#">3</a>
+					<a class="jump" href="#">4</a>
+					<a class="jump" href="#">5</a>
+					<a class="next" href="#">Next</a>
+				</div>
 			</div>
 		</li>
 	</ul>
 
 
 
+	<hr/>
+
+	<h2>その他</h2>
+	<ul>
+		<li>
+			<h3>Separator</h3>
+			<p>hy-separator</p>
+			<div class="content">
+				<hr class="hy-separator"/>
+			</div>
+		</li>
+		<li>
+			<h3>HEADER</h3>
+			<p>hy-header</p>
+			<div class="content">
+				<h1 class="hy-header">
+					HEADER 1
+				</h1>
+				<h2 class="hy-header">
+					HEADER 2
+				</h2>
+			</div>
+		</li>
+		<li>
+			<h3>Text and Label</h3>
+			<p>hy-text-label</p>
+			<div class="content">
+				<div class="hy-text-label">
+					<label>hy-text-label</label>
+					<span>HY-TEXT-LABEL</span>
+				</div>
+			</div>
+		</li>
+
+		<li>
+			<h3>Box</h3>
+			<p>hy-box</p>
+			<div class="content">
+				<div class="hy-box white">
+				</div>
+				<div class="hy-box white lightgrey-border">
+				</div>
+			</div>
+		</li>
+
+	</ul>
 </body>
 </html>

@@ -31,8 +31,10 @@ $length-5: 40px;
 $length-7: 56px;
 $length-9: 72px;
 $length-11: 88px;
-$length-24: 196px;
+$length-15: 120px;
+$length-24: 192px;
 $length-32: 256px;
+$length-40: 320px;
 $length-50: 400px;
 $length-128: 1024px;
 
@@ -76,6 +78,24 @@ $length-128: 1024px;
 .white{
 	background-color: $white;
 }
+.black-border{
+	border: 1px solid $black;
+}
+.darkgrey-border{
+	border: 1px solid $darkGrey;
+}
+.lightgrey-border{
+	border: 1px solid $lightGrey;
+}
+.highlight-border{
+	border: 1px solid $highLight;
+}
+.oppositelight-border{
+	border: 1px solid $oppositeLight;
+}
+.white-border{
+	border: 1px solid $white;
+}
 
 @for $i from 1 through 6 {
 	h#{$i} {
@@ -104,6 +124,55 @@ p {
 @mixin transition {
 	-webkit-transition: all .3s;
 	transition: all .3s;
+}
+
+@mixin boxshadow {
+	box-shadow: 2px 2px 2px 2px $lightGrey;
+}
+
+@mixin newable{
+	&.new::after {
+    	content: "NEW";
+	    position: absolute;
+	    top: 0;
+	    right: 0;
+	    display: block;
+	    background: $highLight;
+	    color: $white;
+	    padding:{
+	    	right: $length-1;
+	    	left: $length-1;
+	    }
+	    height:  $length-3;
+	    line-height:  $length-3;
+    }
+}
+
+@mixin hy-form-button($main:$black, $sub:$white){
+	@include transition;
+	background-color: $main;
+	border: 1px solid $main;
+	border-radius: $formRadius;
+	color: $sub;
+	&:hover{
+		background-color: $sub;
+		border-color: $main;
+		color: $main;
+	}
+}
+
+@mixin hy-form-button-inverse($main:$black, $sub:$white){
+	@include transition;
+	background-color: $sub;
+	border: 1px solid $main;
+	border-radius: $formRadius;
+	color: $main;
+
+	&:hover{
+		background-color: $main;
+		border-color: $main;
+		color: $sub;
+	}
 }
 
 .hy-top-menu {
@@ -152,6 +221,8 @@ p {
 		padding: $length-1;
 		text-align: center;
 		a {
+			@include transition;
+
 			display: inline-table;
 			position:relative;
 			height: $length-7;
@@ -347,20 +418,6 @@ p {
 	}
 }
 
-
-@mixin hy-form-button($main:$black, $sub:$white){
-	background-color: $main;
-	border: 1px solid $main;
-	border-radius: $formRadius;
-	color: $sub;
-
-	&:hover{
-		background-color: $sub;
-		border-color: $main;
-		color: $main;
-	}
-}
-
 .hy-form-button {
 	@include hy-form-button($darkGrey, $white);
 	&.main {
@@ -409,12 +466,17 @@ button.hy-form-button{
 	& > button {
 		@extend .hy-form-button;
 		min-width: 0;
+		padding: {
+			left: $length-1;
+			right: $length-1;
+		}
 		border-radius: 0px $formRadius $formRadius 0px;
 	}
 }
 
 .hy-hoverable-image{
 	@include transition;
+	@include newable;
 
 	position: relative;
     display: inline-block;
@@ -454,9 +516,200 @@ button.hy-form-button{
 
 }
 
+.hy-card{
+	@include boxshadow;
+	@include newable;
+
+    display: inline-block;
+    position: relative;
+    width: $length-32;
+    padding: $length-1;
+    background-color: white;
+    text-decoration: none;
+
+	& > span {
+
+	    position: relative;
+	    display: inline-block;
+	    width: 100%;
+	    height: $length-24;
+	    overflow: hidden;
+
+		& > * {
+		    position: absolute;
+		    left: -100%;
+		    right: -100%;
+		    margin: auto;
+		    width: auto;
+		    height: $length-24;
+		}
+	}
+
+	& > .cover{
+		@include transition;
+
+	    display: inline-block;
+	    position: absolute;
+	    top: $length-1;
+	    height: ($length-24 - $length-2);
+	    width: ($length-32 - $length-2);
+	    background-color: $clear;
+	    color: $clear;
+	    padding: $length-1;
+
+		& > .main{
+		    display: block;
+		    position: absolute;
+		    bottom: $length-7;
+		    left: $length-1;
+		}
+		& > .sub{
+		    display: block;
+		    position: absolute;
+		    bottom: $length-1;
+		    left: $length-1;
+		}
+	}
+
+	&:hover {
+		& > .cover{
+			background-color: $cover;
+			color: $white;
+		}
+	}
+
+	& > .message{
+		color: $darkGrey;
+
+		& > h4 {
+		}
+		& > span{
+		}
+	}
+}
+
+.hy-img-card-layout{
+	width: ($length-2+ $length-2 + $length-32) * 4 + $length-2;
+	position: relative;
+	margin: auto;
+
+	 & > * {
+	 	margin: {
+	 		right: $length-2;
+	 		bottom: $length-2;
+	 	}
+	 }
+}
+
+.hy-icon-large {
+	display: inline-block;
+	position: relative;
+	height: $length-15;
+	width: $length-15;
+	border-radius: $length-15 / 2;
+	overflow: hidden;
+
+	& > img{
+		position: absolute;
+		height: $length-15;
+		margin: auto;
+		left: -100%;
+		right: -100%;
+	}
+}
+
+.hy-icon-medium {
+	display: inline-block;
+	position: relative;
+	height: $length-5;
+	width: $length-5;
+	border-radius: $length-5 / 2 ;
+	overflow: hidden;
+
+	& > img{
+		position: absolute;
+		height: $length-5;
+		margin: auto;
+		left: -100%;
+		right: -100%;
+	}
+}
+
+.hy-pagenate{
+	display: block;
+	position: relative;
+	text-align: center;
+
+	& > a {
+		@include hy-form-button-inverse($darkGrey, $white);
+		text-decoration:none;
+		padding:{
+			top: $length-1/2;
+			bottom: $length-1/2;
+			left: $length-1;
+			right: $length-1;
+		}
+	}
+
+	& > .jump:nth-child(4){
+		@include hy-form-button($darkGrey, $white);
+	}
+}
+
+.hy-separator{
+    border: none;
+    background-color: $lightGrey;
+    height: 1px;
+}
+
+.hy-header{
+	text-align: center;
+
+	&::before{
+		position: relative;
+		content: "-";
+	}
+	&::after{
+		position: relative;
+		content: "-";
+	}
+}
+
+.hy-text-label{
+    display: inline-block;
+    margin-top: $length-2;
+
+    & > label{
+	    position: absolute;
+	    top: $length-1;
+	    font-size:$length-2 - 4px;
+	    font-family:$headerFont;
+    }
+}
+
+.hy-box {
+	@include boxshadow;
+	display:inline-block;
+	padding: $length-2;
+	margin: $length-2;
+}
 
 
 
+.slider {
+    width: 50%;
+    margin: 100px auto;
+}
 
+.slick-slide {
+  margin: 0px 20px;
+}
 
+.slick-slide img {
+  width: 100%;
+}
 
+.slick-prev:before,
+.slick-next:before {
+    color: black;
+}

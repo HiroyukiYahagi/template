@@ -58,6 +58,30 @@
   background-color: white;
 }
 
+.black-border {
+  border: 1px solid black;
+}
+
+.darkgrey-border {
+  border: 1px solid #505050;
+}
+
+.lightgrey-border {
+  border: 1px solid #a0a0a0;
+}
+
+.highlight-border {
+  border: 1px solid #de1500;
+}
+
+.oppositelight-border {
+  border: 1px solid #00b3de;
+}
+
+.white-border {
+  border: 1px solid white;
+}
+
 h1 {
   font-family: "Noto Sans CJK JP Bold", sans-serif;
   font-weight: bold;
@@ -130,7 +154,7 @@ p {
   left: 0;
   padding: 8px;
   height: 56px;
-  min-width: 196px;
+  min-width: 192px;
 }
 .hy-top-menu .logo img {
   position: relative;
@@ -153,6 +177,8 @@ p {
   text-align: center;
 }
 .hy-top-menu .center-menu a {
+  -webkit-transition: all .3s;
+  transition: all .3s;
   display: inline-table;
   position: relative;
   height: 56px;
@@ -180,7 +206,7 @@ p {
   right: 0;
   padding: 8px;
   height: 56px;
-  min-width: 196px;
+  min-width: 192px;
 }
 .hy-top-menu .right-menu a {
   display: inline-table;
@@ -243,7 +269,7 @@ p {
 .hy-footer > div > ul {
   display: inline-table;
   position: relative;
-  width: 196px;
+  width: 192px;
   list-style-type: none;
   padding-left: 0;
 }
@@ -298,12 +324,14 @@ p {
 }
 
 .hy-form-button, .hy-form-text-button > button {
+  -webkit-transition: all .3s;
+  transition: all .3s;
   background-color: #505050;
   border: 1px solid #505050;
   border-radius: 2px;
   color: white;
   display: inline-block;
-  min-width: 196px;
+  min-width: 192px;
   min-height: 40px;
   text-align: center;
   text-decoration: none;
@@ -316,6 +344,8 @@ p {
   color: #505050;
 }
 .hy-form-button.main, .hy-form-text-button > button.main {
+  -webkit-transition: all .3s;
+  transition: all .3s;
   background-color: #de1500;
   border: 1px solid #de1500;
   border-radius: 2px;
@@ -327,6 +357,8 @@ p {
   color: #de1500;
 }
 .hy-form-button.sub, .hy-form-text-button > button.sub {
+  -webkit-transition: all .3s;
+  transition: all .3s;
   background-color: #00b3de;
   border: 1px solid #00b3de;
   border-radius: 2px;
@@ -361,6 +393,8 @@ button.hy-form-button, .hy-form-text-button > button {
 }
 .hy-form-text-button > button {
   min-width: 0;
+  padding-left: 8px;
+  padding-right: 8px;
   border-radius: 0px 2px 2px 0px;
 }
 
@@ -369,6 +403,19 @@ button.hy-form-button, .hy-form-text-button > button {
   transition: all .3s;
   position: relative;
   display: inline-block;
+}
+.hy-hoverable-image.new::after {
+  content: "NEW";
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background: #de1500;
+  color: white;
+  padding-right: 8px;
+  padding-left: 8px;
+  height: 24px;
+  line-height: 24px;
 }
 .hy-hoverable-image > div {
   -webkit-transition: all .3s;
@@ -396,6 +443,208 @@ button.hy-form-button, .hy-form-text-button > button {
 .hy-hoverable-image:hover > div {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
+}
+
+.hy-card {
+  box-shadow: 2px 2px 2px 2px #a0a0a0;
+  display: inline-block;
+  position: relative;
+  width: 256px;
+  padding: 8px;
+  background-color: white;
+  text-decoration: none;
+}
+.hy-card.new::after {
+  content: "NEW";
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  background: #de1500;
+  color: white;
+  padding-right: 8px;
+  padding-left: 8px;
+  height: 24px;
+  line-height: 24px;
+}
+.hy-card > span {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 192px;
+  overflow: hidden;
+}
+.hy-card > span > * {
+  position: absolute;
+  left: -100%;
+  right: -100%;
+  margin: auto;
+  width: auto;
+  height: 192px;
+}
+.hy-card > .cover {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  height: 176px;
+  width: 240px;
+  background-color: transparent;
+  color: transparent;
+  padding: 8px;
+}
+.hy-card > .cover > .main {
+  display: block;
+  position: absolute;
+  bottom: 56px;
+  left: 8px;
+}
+.hy-card > .cover > .sub {
+  display: block;
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+}
+.hy-card:hover > .cover {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+.hy-card > .message {
+  color: #505050;
+}
+
+.hy-img-card-layout {
+  width: 1168px;
+  position: relative;
+  margin: auto;
+}
+.hy-img-card-layout > * {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+.hy-icon-large {
+  display: inline-block;
+  position: relative;
+  height: 120px;
+  width: 120px;
+  border-radius: 60px;
+  overflow: hidden;
+}
+.hy-icon-large > img {
+  position: absolute;
+  height: 120px;
+  margin: auto;
+  left: -100%;
+  right: -100%;
+}
+
+.hy-icon-medium {
+  display: inline-block;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.hy-icon-medium > img {
+  position: absolute;
+  height: 40px;
+  margin: auto;
+  left: -100%;
+  right: -100%;
+}
+
+.hy-pagenate {
+  display: block;
+  position: relative;
+  text-align: center;
+}
+.hy-pagenate > a {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  background-color: white;
+  border: 1px solid #505050;
+  border-radius: 2px;
+  color: #505050;
+  text-decoration: none;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.hy-pagenate > a:hover {
+  background-color: #505050;
+  border-color: #505050;
+  color: white;
+}
+.hy-pagenate > .jump:nth-child(4) {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  background-color: #505050;
+  border: 1px solid #505050;
+  border-radius: 2px;
+  color: white;
+}
+.hy-pagenate > .jump:nth-child(4):hover {
+  background-color: white;
+  border-color: #505050;
+  color: #505050;
+}
+
+.hy-separator {
+  border: none;
+  background-color: #a0a0a0;
+  height: 1px;
+}
+
+.hy-header {
+  text-align: center;
+}
+.hy-header::before {
+  position: relative;
+  content: "-";
+}
+.hy-header::after {
+  position: relative;
+  content: "-";
+}
+
+.hy-text-label {
+  display: inline-block;
+  margin-top: 16px;
+}
+.hy-text-label > label {
+  position: absolute;
+  top: 8px;
+  font-size: 12px;
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
+}
+
+.hy-box {
+  box-shadow: 2px 2px 2px 2px #a0a0a0;
+  display: inline-block;
+  padding: 16px;
+  margin: 16px;
+}
+
+.slider {
+  width: 50%;
+  margin: 100px auto;
+}
+
+.slick-slide {
+  margin: 0px 20px;
+}
+
+.slick-slide img {
+  width: 100%;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
 }
 
 /*# sourceMappingURL=hy_template.css.map */
