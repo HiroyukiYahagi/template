@@ -127,7 +127,7 @@ p {
 }
 
 @mixin boxshadow {
-	box-shadow: 2px 2px 2px 2px $lightGrey;
+	box-shadow: 9px 9px 10px -5px $lightGrey;
 }
 
 @mixin newable{
@@ -154,10 +154,16 @@ p {
 	border: 1px solid $main;
 	border-radius: $formRadius;
 	color: $sub;
-	&:hover{
+	&:hover,
+	&.inactive{
 		background-color: $sub;
 		border-color: $main;
 		color: $main;
+	}
+	&.inactive:hover{
+		background-color: $main;
+		border: 1px solid $main;
+		color: $sub;
 	}
 }
 
@@ -519,6 +525,7 @@ button.hy-form-button{
 .hy-card{
 	@include boxshadow;
 	@include newable;
+	@include transition;
 
     display: inline-block;
     position: relative;
@@ -572,6 +579,7 @@ button.hy-form-button{
 	}
 
 	&:hover {
+		transform: scale(1.05);
 		& > .cover{
 			background-color: $cover;
 			color: $white;
@@ -595,8 +603,8 @@ button.hy-form-button{
 
 	 & > * {
 	 	margin: {
-	 		right: $length-2;
-	 		bottom: $length-2;
+	 		right: $length-5;
+	 		bottom: $length-5;
 	 	}
 	 }
 }
@@ -694,22 +702,80 @@ button.hy-form-button{
 	margin: $length-2;
 }
 
+.hy-slider {
+	& .slick-slide {
+		margin: 0px 8px;
+	}
 
+	& .slick-slide img {
+		width: 100%;
+	}
 
-.slider {
-    width: 50%;
-    margin: 100px auto;
+	& > button {
+		height: 100%;
+	    width: $length-11;
+	    z-index: 1;
+
+    	&.slick-prev {
+			left: 0;
+			&:before {
+				content: "<";
+			}
+		}
+
+		&.slick-next {
+			right: 0;
+			&:before {
+				content: ">";
+			}
+		}
+
+		&:before{
+			@include transition;
+		    color: $lightGrey;
+		    font-size: $length-9;
+		}
+		&:hover:before{
+			color: $darkGrey;
+			font-size: $length-11;
+		}
+	}
 }
 
-.slick-slide {
-  margin: 0px 20px;
+
+.hy-tab-menu {
+	text-align: center;
 }
 
-.slick-slide img {
-  width: 100%;
-}
 
-.slick-prev:before,
-.slick-next:before {
-    color: black;
+.hy-flush {
+	font-family: $headerFont;
+	border:{
+		width: 1px;
+		style: solid;
+	}
+	margin:{
+		top: $length-1;
+		bottom: $length-1;
+	}
+	padding:{
+		top: $length-1;
+		bottom: $length-1;
+		left: $length-5;
+		right: $length-3;
+	}
+
+	border-color: $darkGrey;
+	background-color: rgba(200, 200, 200, 0.1);
+	color: $darkGrey;
+	&.alert{
+		color: $highLight;
+		border-color: $highLight;
+		background-color: rgba(200, 0, 0, 0.1);
+	}
+	&.message{	
+		color: $oppositeLight;
+		border-color: $oppositeLight;
+		background-color: rgba(0, 200, 200, 0.1);
+	}
 }
