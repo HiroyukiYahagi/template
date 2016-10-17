@@ -588,16 +588,28 @@ button.hy-form-button, .hy-form-text-button > button {
   border: 1px solid #505050;
   border-radius: 2px;
   color: #505050;
+  background-color: transparent;
+  border: 0px;
   text-decoration: none;
   padding-top: 4px;
   padding-bottom: 4px;
   padding-left: 8px;
   padding-right: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
 }
 .hy-pagenate > a:hover {
   background-color: #505050;
   border-color: #505050;
   color: white;
+}
+.hy-pagenate > a.prev:before {
+  content: "<";
+  margin-right: 8px;
+}
+.hy-pagenate > a.next:after {
+  content: ">";
+  margin-left: 8px;
 }
 .hy-pagenate > .jump:nth-child(4) {
   -webkit-transition: all .3s;
@@ -715,6 +727,121 @@ button.hy-form-button, .hy-form-text-button > button {
   color: #00b3de;
   border-color: #00b3de;
   background-color: rgba(0, 200, 200, 0.1);
+}
+
+.hy-read-more {
+  text-decoration: none;
+}
+.hy-read-more::after {
+  content: ">";
+  position: relative;
+  left: 8px;
+  text-decoration: none;
+}
+
+.hy-comment {
+  position: relative;
+  margin-bottom: 32px;
+  min-height: 136px;
+}
+.hy-comment:first-child {
+  margin-top: 16px;
+}
+.hy-comment > img {
+  position: absolute;
+}
+.hy-comment > div {
+  display: inline-block;
+  position: relative;
+  width: calc( 100% - 136px );
+  margin-left: 136px;
+}
+.hy-comment > div > .header > .name {
+  font-weight: bolder;
+}
+.hy-comment > div > .header > * {
+  margin-right: 16px;
+}
+.hy-comment > hr {
+  position: absolute;
+  margin-top: 16px;
+  width: 100%;
+  bottom: 0;
+  margin: 0;
+}
+.hy-comment:last-child > hr {
+  display: none;
+}
+
+.hy-news {
+  text-decoration: none;
+  display: block;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-weight: bolder;
+  color: black;
+  padding-top: 16px;
+}
+.hy-news > hr {
+  width: 40px;
+  margin-top: 16px;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
+.hy-news:last-child {
+  padding-bottom: 16px;
+}
+.hy-news:last-child > hr {
+  display: none;
+}
+.hy-news:hover {
+  background-color: #a0a0a0;
+}
+
+.hy-main-image {
+  position: relative;
+  margin: auto;
+  height: 100%;
+  width: auto;
+  left: 0;
+  right: 0;
+}
+
+.hy-sub-image {
+  box-shadow: 9px 9px 10px -5px #a0a0a0;
+  position: relative;
+  width: 104px;
+  height: 104px;
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 8px;
+  margin-top: 8px;
+}
+.hy-sub-image > img {
+  position: absolute;
+  margin: auto;
+  height: 100%;
+  left: -100%;
+  right: -100%;
+}
+
+.hy-tag {
+  display: inline-block;
+  margin-right: 8px;
+  margin-left: 8px;
+  border-radius: 16px;
+  line-height: 16px;
+  padding-left: 12px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.hy-tag:after {
+  display: inline-block;
+  content: "X";
+  background-color: white;
+  color: #a0a0a0;
 }
 
 /*# sourceMappingURL=hy_template.css.map */

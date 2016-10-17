@@ -42,6 +42,19 @@ var initTemplate = function (){
 		$(this).remove();
 	});
 
+
+	//
+	// main-sub-image
+	//
+	$(".hy-sub-image").click(function(){
+		var src = $(this).data("src");
+		var targetId = $(this).attr("for");
+		$("#" + targetId).animate({ opacity: 0 }, 300, function () {
+			$(this).attr("src", src);
+			$("#" + targetId).animate({ opacity: 1 }, 300);
+		});
+	});
+
 }
 
 $(document).ready(function() {
