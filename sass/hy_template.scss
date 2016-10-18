@@ -1,21 +1,21 @@
 @font-face {
 	font-family: 'Noto Sans CJK JP';
-	src: url(../font/NotoSansCJKjp-Thin.otf);
+	src: url(../fonts/NotoSansCJKjp-Thin.otf);
 }
 @font-face {
 	font-family: 'Noto Sans CJK JP Bold';
-	src: url(../font/NotoSansCJKjp-Bold.otf);
+	src: url(../fonts/NotoSansCJKjp-Bold.otf);
 }
 
 $font: "Noto Sans CJK JP", sans-serif;
 $headerFont: "Noto Sans CJK JP Bold", sans-serif;
 
-$black: rgba(0,0,0,1);
-$darkGrey: rgba(80,80,80,1);
-$lightGrey: rgba(160,160,160,1);
+$black: rgba(37,37,37,1);
+$darkGrey: rgba(146,146,146,1);
+$lightGrey: rgba(242,242,242,1);
 $white: rgba(255,255,255,1);
 
-$highLight: rgba(222,21,0,1);
+$highLight: rgba(255,69,89,1);
 $oppositeLight: rgba(0,179,222,1);
 
 $clear: rgba(0,0,0,0);
@@ -25,8 +25,10 @@ $cover: rgba(0,0,0,0.5);
 
 $length-0: 0;
 $length-1: 8px;
+$length-1-5: 12px;
 $length-2: 16px;
 $length-3: 24px;
+$length-4: 32px;
 $length-5: 40px;
 $length-7: 56px;
 $length-9: 72px;
@@ -34,6 +36,7 @@ $length-11: 88px;
 $length-13: 104px;
 $length-15: 120px;
 $length-24: 192px;
+$length-27: 216px;
 $length-32: 256px;
 $length-40: 320px;
 $length-50: 400px;
@@ -101,8 +104,8 @@ $length-128: 1024px;
 @for $i from 1 through 6 {
 	h#{$i} {
 		font: {
-			family: $headerFont;
-			weight: bold;
+			family: $font;
+			//weight: bold;
 			size: #{(40 - $i * 3)}px;  
 		}
 		margin: {
@@ -197,7 +200,7 @@ p {
 
 	color: $white;
 
-	.logo {
+	& > .logo {
 		display: inline-block;
 		position: absolute;
 		left: 0;
@@ -205,13 +208,13 @@ p {
 		height: $length-7;
 		min-width: $length-24;
 
-		img {
+		& > img {
 			position:relative;
 			display:inline-block;
 			height: $length-7;
 		}
 
-		span {
+		& > span {
 			position:absolute;
 			line-height: $length-7;
 			font-size: $length-3;
@@ -219,7 +222,7 @@ p {
 		}
 	}
 
-	.center-menu {
+	& > .center-menu {
 		position:absolute;
 		margin: auto;
 		left: 0;
@@ -227,7 +230,7 @@ p {
 		height: $length-7;
 		padding: $length-1;
 		text-align: center;
-		a {
+		& > a {
 			@include transition;
 
 			display: inline-table;
@@ -257,18 +260,35 @@ p {
 		}
 	}
 
-	.right-menu {
+	& > .right-menu {
 		position:absolute;
 		margin: auto;
 		right:0;
 		padding: $length-1;
 		height: $length-7;
 		min-width: $length-24;
-		a {
+
+		& > a {
+			@include transition;
+
 			display: inline-table;
 			height: $length-7;
 			position: relative;
-			img {
+			text-decoration: none;
+			text-align: center;
+
+			padding: {
+				left: $length-1;
+				right: $length-1;
+			}
+
+			&:hover {
+				border:{
+					bottom: $length-1 solid $highLight
+				}
+			}
+
+			& > img {
 				position:absolute;
 				display:inline-block;
 				height: $length-7;
@@ -276,10 +296,54 @@ p {
 					margin-left: $length-7;
 				}
 			}
-			span {
+
+			& > span {
 				position:relative;
 				line-height: $length-7;
 				color: $white;
+				min-width: $length-9;
+
+				&:after{
+					content: attr(data-sub);
+					color: $lightGrey;
+					position: absolute;
+					text-align: center;
+					left: 0px;
+					right: 0px;
+					top: 0px;
+					font-size: $length-1;
+				}
+			}
+		}
+
+		& > ul {
+			display: inline-block;
+			position: absolute;
+			background-color: $black;
+			list-style-type:none;
+
+			top: $length-9;
+			right: 0px;
+			width: $length-32;
+			padding: 0px;
+			z-index: 1;
+
+			& > li {
+				padding: {
+					top: $length-1;
+					bottom: $length-1;
+					left: $length-2;
+					right: $length-2;
+				}
+
+				&:hover{
+					background-color: $darkGrey;
+				}
+
+				& > a{
+					text-decoration: none;
+					color: $white;
+				}
 			}
 		}
 	}
@@ -353,6 +417,14 @@ p {
 				color: $white;
 				text-decoration: none;
 				font-size: $length-2;
+				padding: {
+					left: $length-1;
+					right: $length-1;
+				}
+				
+				&:hover{
+					background-color: $darkGrey;
+				}
 			}
 		}
 
@@ -360,11 +432,17 @@ p {
 			position: absolute;
 			right: 0;
 			bottom: 0;
-
 			& a {
 				display: inline-table;
 				color: $white;
 				text-decoration: none;
+				margin: {
+					right: $length-1;
+					left: $length-1;
+				}
+				& > i {
+					font-size: $length-4;
+				}
 			}
 		}
 
@@ -386,7 +464,7 @@ p {
 	    min-width: $length-50;
 	    min-height: $length-5;
 	    border: 1px $darkGrey;
-
+	    font-size: $length-2;
 	    border-radius:$formRadius;
 
 	    padding: {
@@ -419,8 +497,9 @@ p {
 	& > label{
 	    display: block;
 	    position: absolute;
+	    font-family: $headerFont;
 	    top: -1 * $length-3;
-	    font-weight: bolder;
+	    //font-weight: bolder;
 	    font-size: $length-2 - 4;
 	}
 }
@@ -441,6 +520,7 @@ p {
 	text-decoration: none;
 	outline: none;
 	line-height: $length-5;
+	font-size: $length-2;
 
 	&::before,
 	&::after {
@@ -472,11 +552,12 @@ button.hy-form-button{
 
 	& > button {
 		@extend .hy-form-button;
-		min-width: 0;
+		min-width: 0px;
 		padding: {
 			left: $length-1;
 			right: $length-1;
 		}
+		margin: 0px;
 		border-radius: 0px $formRadius $formRadius 0px;
 	}
 }
@@ -497,6 +578,7 @@ button.hy-form-button{
 		display: inline-block;
 		position: absolute;
 		top: 0;
+		left: 0;
 		height: 100%;
 		width: 100%;
 		background-color: $clear;
@@ -516,22 +598,23 @@ button.hy-form-button{
 		}
 	}
 
-	&:hover > div{
-		background-color: $cover;
-		color: $white;
+	&:hover {
+		transform: scale(1.05);
+		z-index: 1;
+		& > div{
+			background-color: $cover;
+			color: $white;
+		}
 	}
-
 }
 
 .hy-card{
-	@include boxshadow;
 	@include newable;
 	@include transition;
 
     display: inline-block;
     position: relative;
-    width: $length-32;
-    padding: $length-1;
+    width: $length-24;
     background-color: white;
     text-decoration: none;
 
@@ -540,72 +623,75 @@ button.hy-form-button{
 	    position: relative;
 	    display: inline-block;
 	    width: 100%;
-	    height: $length-24;
+	    height: $length-32;
 	    overflow: hidden;
 
-		& > * {
+		& > img {
 		    position: absolute;
 		    left: -100%;
 		    right: -100%;
 		    margin: auto;
 		    width: auto;
-		    height: $length-24;
-		}
-	}
-
-	& > .cover{
-		@include transition;
-
-	    display: inline-block;
-	    position: absolute;
-	    top: $length-1;
-	    height: ($length-24 - $length-2);
-	    width: ($length-32 - $length-2);
-	    background-color: $clear;
-	    color: $clear;
-	    padding: $length-1;
-
-		& > .main{
-		    display: block;
-		    position: absolute;
-		    bottom: $length-7;
-		    left: $length-1;
-		}
-		& > .sub{
-		    display: block;
-		    position: absolute;
-		    bottom: $length-1;
-		    left: $length-1;
+		    height: $length-32;
 		}
 	}
 
 	&:hover {
 		transform: scale(1.05);
-		& > .cover{
-			background-color: $cover;
-			color: $white;
-		}
 	}
 
 	& > .message{
 		color: $darkGrey;
+		padding: $length-1;
+		margin-top: -5px;
+		color: $darkGrey;
+		background-color: $lightGrey;
 
-		& > h4 {
+		border: {
+			top: 1px solid $darkGrey;
+			bottom: 1px solid $darkGrey;
 		}
-		& > span{
+
+		& > .titles {
+			display: inline-block;
+			width: calc(100% - #{$length-5});
+			overflow: hidden;
+			& > .title{
+				font-family: $headerFont;
+			}
+			& > .sub-title{
+				font-size: $length-1-5;
+			}
+		}
+		& > .status {
+			display: inline-block;
+			width: $length-5;
+			float: right;
+			text-align: center;
+			& > .star{
+
+			}
+			& > .star.on{
+				color: $highLight;
+			}
+			& > .number{
+				font-family: $headerFont;
+				font-size: $length-1-5;
+			}
 		}
 	}
 }
 
 .hy-img-card-layout{
-	width: ($length-2+ $length-2 + $length-32) * 4 + $length-2;
 	position: relative;
 	margin: auto;
-
+	width: 100%;
+	text-align: center;
 	 & > * {
+	 	text-align: left;
 	 	margin: {
-	 		right: $length-5;
-	 		bottom: $length-5;
+	 		right: $length-2;
+	 		bottom: $length-2;
 	 	}
 	 }
 }
@@ -678,25 +764,42 @@ button.hy-form-button{
 
 	& > .jump:nth-child(4){
 		@include hy-form-button($darkGrey, $white);
+		border-color: rgba(0,0,0,0);
+	}
+	& > .jump:nth-child(4):hover{
+		background-color: rgba(0,0,0,0);
+		border-color: rgba(0,0,0,0);
 	}
 }
 
 .hy-separator{
     border: none;
-    background-color: $lightGrey;
+    background-color: $darkGrey;
     height: 1px;
 }
 
 .hy-header{
+	position: relative;
 	text-align: center;
+	margin-bottom: $length-3;
 
-	&::before{
+	&:before{
 		position: relative;
 		content: "-";
 	}
-	&::after{
+	&:after{
 		position: relative;
-		content: "-";
+		content: "-" attr(data-sub);
+	}
+
+	& > span {
+		position: absolute;
+		margin: auto;
+		left: 0;
+		right: 0;
+		font-size: $length-2;
+		bottom: -1 * $length-2;
+		color: $darkGrey;
 	}
 }
 
@@ -708,12 +811,12 @@ button.hy-form-button{
 	    position: absolute;
 	    top: $length-1;
 	    font-size:$length-2 - 4px;
-	    font-family:$headerFont;
+	    font-family:$font;
     }
 }
 
 .hy-box {
-	@include boxshadow;
+	//@include boxshadow;
 	display:inline-block;
 	padding: $length-2;
 	margin: $length-2;
@@ -721,7 +824,12 @@ button.hy-form-button{
 
 .hy-slider {
 	& .slick-slide {
+		@include transition;
 		margin: 0px 8px;
+
+		&:hover{
+			transform: scale(1.05);
+		}
 	}
 
 	& .slick-slide img {
@@ -742,17 +850,23 @@ button.hy-form-button{
 
 		&.slick-next {
 			right: 0;
-			&:before {
+			&:before{
+				content: "";
+			}
+			&:after {
 				content: ">";
 			}
 		}
 
-		&:before{
+		&:before,
+		&:after{
 			@include transition;
 		    color: $lightGrey;
 		    font-size: $length-9;
+		    font-family: $font;
 		}
-		&:hover:before{
+		&:hover:before,
+		&:hover:after{
 			color: $darkGrey;
 			font-size: $length-11;
 		}
@@ -766,7 +880,7 @@ button.hy-form-button{
 
 
 .hy-flush {
-	font-family: $headerFont;
+	font-family: $font;
 	border:{
 		width: 1px;
 		style: solid;
@@ -799,11 +913,22 @@ button.hy-form-button{
 
 .hy-read-more {
 	text-decoration:none;
+	color: $darkGrey;
+
 	&::after{
 		content: ">";
 		position: relative;
 	    left: $length-1;
 		text-decoration:none;
+		display: inline-block;
+	}
+
+	&.hy-form-button{
+		@include hy-form-button-inverse($darkGrey, $white);
+		position:relative;
+		&:after{
+			z-index: 1;
+		}
 	}
 }
 
@@ -828,7 +953,8 @@ button.hy-form-button{
 
 	    & > .header{
 	    	& > .name{
-	    		font-weight: bolder;
+	    		font-family: $headerFont;
+	    		//font-weight: bolder;
 	    	}
 	    	& > * {
 	    		margin-right: 16px;
@@ -858,10 +984,29 @@ button.hy-form-button{
     display: block;
     margin-top: $length-1;
     margin-bottom: $length-1;
-    font-weight: bolder;
-    color: $black;
-
+    font-family: $font;
+   	color: $black;
     padding-top: $length-2;
+
+  	& > span {
+  		display: inline-block;
+  		line-height: $length-3;
+  		height: $length-3;
+  		overflow: hidden;
+  	}
+
+  	& > span.date{
+  		width: $length-9;
+  		margin-right: $length-2;
+  	}
+  	& > span.title{
+  		width: $length-24;
+  		margin-right: $length-2;
+  	}
+  	& > span.description{
+  		margin-bottom: -5px; //only safari ??
+  		width: calc( 100% - #{$length-40} )
+  	}
 
     & > hr{
     	width: $length-5;
@@ -896,7 +1041,8 @@ button.hy-form-button{
 }
 
 .hy-sub-image {
-	@include boxshadow;
+	//@include boxshadow;
+	@include transition;
 	position:relative;
 	width: $length-13;
 	height: $length-13;
@@ -915,23 +1061,48 @@ button.hy-form-button{
 		left: -100%;
 		right: -100%;
 	}
+
+	&:hover {
+		transform: scale(1.05);
+	}
 }
 
 .hy-tag{
+	@include transition;
+
 	display: inline-block;
-    margin-right: 8px;
-    margin-left: 8px;
-    border-radius: 16px;
-    line-height: 16px;
-    padding-left: 12px;
-    padding-right: 16px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    margin:{
+    	right: $length-1;
+    	left: $length-1;
+    }
+    border-radius: $length-2;
+    line-height: $length-2;
+    padding: {
+    	left: $length-2;
+    	right: $length-2;
+    	top: $length-1;
+    	bottom: $length-1;
+    }
 
 	&:after{
-		display:inline-block;
-		content: "X";
+		display: inline-block;
+		content: "×";
 		background-color: white;
-		color: $lightGrey;
+		color: $darkGrey;
+		border-radius: #{($length-3 - 4px)/2};
+		margin-left: $length-1/2;
+		font-size: $length-3/2;
+		width: #{$length-3 - 4px};
+		height: #{$length-3 - 4px};
+		line-height: #{$length-3 - 4px};
+		text-align: center;
 	}
+
+	&:hover{
+		transform: scale(1.05);
+	}
+}
+
+.hy-shadow {
+	@include boxshadow;
 }

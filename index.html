@@ -4,15 +4,24 @@
 	<meta charset="utf-8"/>
 	<title>テンプレート集</title>
 
+	<!-- jQuery -->
 	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 
+	<!-- Slick -->
  	<link rel="stylesheet" type="text/css" href="css/slick.css">
  	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
 	<script src="js/slick.min.js" type="text/javascript" charset="utf-8" async defer></script> 
 
+	<!-- Remodal -->
  	<link rel="stylesheet" type="text/css" href="css/remodal.css">
  	<link rel="stylesheet" type="text/css" href="css/remodal-default-theme.css">
 	<script src="js/remodal.js" type="text/javascript" charset="utf-8" async defer></script> 
+
+	<!-- Lazy Load -->
+	<script src="js/jquery.lazyload.js" type="text/javascript" charset="utf-8" async defer></script> 
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 
 	<link rel="stylesheet" type="text/css" href="sass/hy_template.css">
 	<script src="js/hy_template.js" type="text/javascript" charset="utf-8" async defer></script>
@@ -23,7 +32,7 @@
 			margin:10px;
 			padding: 10px;
 			border: 1px solid black;
-			background-color: #F0EFEF;
+			background-color: #FFFFFF;
 		}	
 	</style>
 </head>
@@ -81,13 +90,24 @@
 						<span>BRAND</span>
 					</a>
 					<div class="right-menu">
-						<a href="#">
+						<a for="menu-1" href="#">
 							<span>MENU 1</span>
 						</a>
-						<a href="#" data-sub="SUB">
+						<ul id="menu-1">
+							<li><a href="#">Sub 1</a></li>
+							<li><a href="#">Sub 2</a></li>
+							<li><a href="#">Sub 3</a></li>
+							<li><a href="#">Sub 4</a></li>
+						</ul>
+						<a for="menu-2" href="#">
 							<img src="img/logo.png" alt="">
-							<span>MENU 1</span>
+							<span data-sub="SUB">MENU 1</span>
 						</a>
+						<ul id="menu-2">
+							<li><a href="#">Sub 2-1</a></li>
+							<li><a href="#">Sub 2-2</a></li>
+							<li><a href="#">Sub 2-3</a></li>
+						</ul>
 					</div>
 				</div>
 
@@ -146,8 +166,15 @@
 							</li>
 						</ul>
 						<div class="link">
-							<a href="#">Facebook</a>
-							<a href="#">Twitter</a>
+							<a href="#">
+								<i class="fa fa-facebook-square" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-twitter-square" aria-hidden="true"></i>
+							</a>
+							<a href="#">
+								<i class="fa fa-instagram" aria-hidden="true"></i>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -341,34 +368,30 @@
 					<span>
 						<img src="img/cat.jpg">
 					</span>
-					<div class="cover">
-						<h3 class="main">
-							main message
-						</h3>
-						<p class="sub">
-							sub message
-						</p>
-					</div>
 					<div class="message">
-						<h4>Title</h4>
-						<span>SubTitle</span>
+						<div class="titles">
+							<div class="title">Titlecadscasdcasdcasdcasdcsadcasdcasdc</div>
+							<div class="sub-title">SubTitle</div>
+						</div>
+						<div class="status">
+							<div class="star"><i class="fa fa-heart" aria-hidden="true"></i></div>
+							<div class="number">123</div>	
+						</div>
 					</div>
 				</a>
 				<a class="hy-card new" href="#">
 					<span>
 						<img src="img/cat.jpg">
 					</span>
-					<div class="cover">
-						<h3 class="main">
-							main message
-						</h3>
-						<p class="sub">
-							sub message
-						</p>
-					</div>
 					<div class="message">
-						<h4>Title</h4>
-						<span>SubTitle</span>
+						<div class="titles">
+							<div class="title">Title</div>
+							<div class="sub-title">SubTitle</div>
+						</div>
+						<div class="status">
+							<div class="star"><i class="fa fa-heart" aria-hidden="true"></i></div>
+							<div class="number">123</div>	
+						</div>
 					</div>
 				</a>
 			</div>
@@ -382,119 +405,150 @@
 						<span>
 							<img src="img/cat.jpg">
 						</span>
-						<div class="cover">
-							<h3 class="main">
-								main message
-							</h3>
-							<p class="sub">
-								sub message
-							</p>
-						</div>
 						<div class="message">
-							<h4>Title</h4>
-							<span>SubTitle</span>
+							<div class="titles">
+								<div class="title">Title</div>
+								<div class="sub-title">SubTitle</div>
+							</div>
+							<div class="status">
+								<div class="star"><i class="fa fa-heart" aria-hidden="true"></i></div>
+								<div class="number">123</div>	
+							</div>
 						</div>
 					</a>
 					<a class="hy-card" href="#">
 						<span>
 							<img src="img/cat.jpg">
 						</span>
-						<div class="cover">
-							<h3 class="main">
-								main message
-							</h3>
-							<p class="sub">
-								sub message
-							</p>
-						</div>
 						<div class="message">
-							<h4>Title</h4>
-							<span>SubTitle</span>
+							<div class="titles">
+								<div class="title">Title</div>
+								<div class="sub-title">SubTitle</div>
+							</div>
+							<div class="status">
+								<div class="star"><i class="fa fa-heart" aria-hidden="true"></i></div>
+								<div class="number">123</div>	
+							</div>
 						</div>
 					</a>
 					<a class="hy-card" href="#">
 						<span>
 							<img src="img/cat.jpg">
 						</span>
-						<div class="cover">
-							<h3 class="main">
-								main message
-							</h3>
-							<p class="sub">
-								sub message
-							</p>
-						</div>
 						<div class="message">
-							<h4>Title</h4>
-							<span>SubTitle</span>
+							<div class="titles">
+								<div class="title">Title</div>
+								<div class="sub-title">SubTitle</div>
+							</div>
+							<div class="status">
+								<div class="star"><i class="fa fa-heart" aria-hidden="true"></i></div>
+								<div class="number">123</div>	
+							</div>
 						</div>
 					</a>
 					<a class="hy-card" href="#">
 						<span>
 							<img src="img/cat.jpg">
 						</span>
-						<div class="cover">
-							<h3 class="main">
-								main message
-							</h3>
-							<p class="sub">
-								sub message
-							</p>
-						</div>
 						<div class="message">
-							<h4>Title</h4>
-							<span>SubTitle</span>
+							<div class="titles">
+								<div class="title">Title</div>
+								<div class="sub-title">SubTitle</div>
+							</div>
+							<div class="status">
+								<div class="star"><i class="fa fa-heart" aria-hidden="true"></i></div>
+								<div class="number">123</div>	
+							</div>
 						</div>
 					</a>
 					<a class="hy-card" href="#">
 						<span>
 							<img src="img/cat.jpg">
 						</span>
-						<div class="cover">
-							<h3 class="main">
-								main message
-							</h3>
-							<p class="sub">
-								sub message
-							</p>
-						</div>
 						<div class="message">
-							<h4>Title</h4>
-							<span>SubTitle</span>
+							<div class="titles">
+								<div class="title">Title</div>
+								<div class="sub-title">SubTitle</div>
+							</div>
+							<div class="status">
+								<div class="star"><i class="fa fa-heart" aria-hidden="true"></i></div>
+								<div class="number">123</div>	
+							</div>
 						</div>
 					</a>
 					<a class="hy-card" href="#">
 						<span>
 							<img src="img/cat.jpg">
 						</span>
-						<div class="cover">
-							<h3 class="main">
-								main message
-							</h3>
-							<p class="sub">
-								sub message
-							</p>
-						</div>
 						<div class="message">
-							<h4>Title</h4>
-							<span>SubTitle</span>
+							<div class="titles">
+								<div class="title">Title</div>
+								<div class="sub-title">SubTitle</div>
+							</div>
+							<div class="status">
+								<div class="star"><i class="fa fa-heart" aria-hidden="true"></i></div>
+								<div class="number">123</div>	
+							</div>
 						</div>
 					</a>
 					<a class="hy-card" href="#">
 						<span>
 							<img src="img/cat.jpg">
 						</span>
-						<div class="cover">
-							<h3 class="main">
-								main message
-							</h3>
-							<p class="sub">
-								sub message
-							</p>
-						</div>
 						<div class="message">
-							<h4>Title</h4>
-							<span>SubTitle</span>
+							<div class="titles">
+								<div class="title">Title</div>
+								<div class="sub-title">SubTitle</div>
+							</div>
+							<div class="status">
+								<div class="star"><i class="fa fa-heart" aria-hidden="true"></i></div>
+								<div class="number">123</div>	
+							</div>
+						</div>
+					</a>
+					<a class="hy-card" href="#">
+						<span>
+							<img src="img/cat.jpg">
+						</span>
+						<div class="message">
+							<div class="titles">
+								<div class="title">Title</div>
+								<div class="sub-title">SubTitle</div>
+							</div>
+							<div class="status">
+								<div class="star"><i class="fa fa-heart" aria-hidden="true"></i></div>
+								<div class="number">123</div>	
+							</div>
+						</div>
+					</a>
+					<a class="hy-card" href="#">
+						<span>
+							<img src="img/cat.jpg">
+						</span>
+						<div class="message">
+							<div class="titles">
+								<div class="title">Title</div>
+								<div class="sub-title">SubTitle</div>
+							</div>
+							<div class="status">
+								<div class="star"><i class="fa fa-heart" aria-hidden="true"></i></div>
+								<div class="number">123</div>	
+							</div>
+						</div>
+					</a>
+					<a class="hy-card" href="#">
+						<span>
+							<img src="img/cat.jpg">
+						</span>
+						<div class="message">
+							<div class="titles">
+								<div class="title">Title</div>
+								<div class="sub-title">SubTitle</div>
+							</div>
+							<div class="status">
+								<div class="star"><i class="fa fa-heart" aria-hidden="true"></i></div>
+								<div class="number">123</div>	
+							</div>
 						</div>
 					</a>
 				</div>
@@ -565,8 +619,8 @@
 				    Responsive, lightweight, fast, synchronized with CSS animations, fully customizable modal window plugin with declarative configuration and hash tracking.
 				  </p>
 				  <br>
-				  <button data-remodal-action="cancel" class="remodal-cancel">Cancel</button>
-				  <button data-remodal-action="confirm" class="remodal-confirm">OK</button>
+				  <button data-remodal-action="cancel" class="hy-form-button">Cancel</button>
+				  <button data-remodal-action="confirm" class="hy-form-button main">OK</button>
 				</div>
 			</div>
 		</li>
@@ -642,6 +696,7 @@
 			<p>hy-read-more</p>
 			<div class="content">
 				<a class="hy-read-more" href="#">もっと見る</a>
+				<a class="hy-read-more hy-form-button" href="#">MORE</a>
 			</div>
 		</li>
 		<li>
@@ -685,20 +740,36 @@
 			<p>hy-news</p>
 			<div class="content">
 				<a class="hy-news" href="#">
-					this is news message. this is news message. this is news message. this is news message. this is news message. this is news message.
-					<hr/>
+					<span>
+						this is news message. this is news message. this is news message. this is news message. this is news message. this is news message.
+						this is news message. this is news message.
+						this is news message. this is news message.
+						this is news message. this is news message.
+						this is news message. this is news message.
+					</span>
+					<hr class="hy-separator" />
 				</a>
 				<a class="hy-news" href="#">
-					this is news message. this is news message. this is news message. this is news message. this is news message. this is news message.
-					<hr/>
+					<span>
+						this is news message. this is news message. this is news message. this is news message. this is news message. this is news message.
+						this is news message. this is news message.
+						this is news message. this is news message.
+						this is news message. this is news message.
+						this is news message. this is news message.
+					</span>
+					<hr class="hy-separator"/>
 				</a>
 				<a class="hy-news" href="#">
-					this is news message. this is news message. this is news message. this is news message. this is news message. this is news message.
-					<hr/>
-				</a>
-				<a class="hy-news" href="#">
-					this is news message. this is news message. this is news message. this is news message. this is news message. this is news message.
-					<hr/>
+					<span class="date">2016.07.11</span>
+					<span class="title">this is title.</span>
+					<span class="description">
+						this is news message. this is news message. this is news message. this is news message. this is news message. this is news message.
+						this is news message. this is news message.
+						this is news message. this is news message.
+						this is news message. this is news message.
+						this is news message. this is news message.
+					</span>
+					<hr class="hy-separator"/>
 				</a>
 			</div>
 		</li>
@@ -741,19 +812,12 @@
 			<h3>tag</h3>
 			<p>hy-tag / removal</p>
 			<div class="content">
-				<span type="text" class="hy-tag lightgrey white-text input">
+				<span type="text" class="hy-tag darkgrey white-text input" data-name="1">
 					tag 1
 				</span>
-				<span type="text" class="hy-tag highlight white-text">
-					tag 1
+				<span type="text" class="hy-tag highlight white-text" data-name="2">
+					tag 2
 				</span>
-			</div>
-		</li>
-		<li>
-			<h3>vertical card</h3>
-			<p>hy-vertical-card</p>
-			<div class="content">
-				<hr class="hy-vertical-card"/>
 			</div>
 		</li>
 	</ul>
@@ -776,9 +840,11 @@
 			<div class="content">
 				<h1 class="hy-header">
 					HEADER 1
+					<span>data-sub</span>
 				</h1>
 				<h2 class="hy-header">
 					HEADER 2
+					<span>data-sub</span>
 				</h2>
 			</div>
 		</li>

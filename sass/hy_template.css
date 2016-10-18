@@ -1,29 +1,30 @@
+@charset "UTF-8";
 @font-face {
   font-family: 'Noto Sans CJK JP';
-  src: url(../font/NotoSansCJKjp-Thin.otf);
+  src: url(../fonts/NotoSansCJKjp-Thin.otf);
 }
 @font-face {
   font-family: 'Noto Sans CJK JP Bold';
-  src: url(../font/NotoSansCJKjp-Bold.otf);
+  src: url(../fonts/NotoSansCJKjp-Bold.otf);
 }
 * {
   font-family: "Noto Sans CJK JP", sans-serif;
 }
 
 .black-text {
-  color: black;
+  color: #252525;
 }
 
 .darkgrey-text {
-  color: #505050;
+  color: #929292;
 }
 
 .lightgrey-text {
-  color: #a0a0a0;
+  color: #f2f2f2;
 }
 
 .highlight-text {
-  color: #de1500;
+  color: #ff4559;
 }
 
 .oppositelight-text {
@@ -35,19 +36,19 @@
 }
 
 .black {
-  background-color: black;
+  background-color: #252525;
 }
 
 .darkgrey {
-  background-color: #505050;
+  background-color: #929292;
 }
 
 .lightgrey {
-  background-color: #a0a0a0;
+  background-color: #f2f2f2;
 }
 
 .highlight {
-  background-color: #de1500;
+  background-color: #ff4559;
 }
 
 .oppositelight {
@@ -59,19 +60,19 @@
 }
 
 .black-border {
-  border: 1px solid black;
+  border: 1px solid #252525;
 }
 
 .darkgrey-border {
-  border: 1px solid #505050;
+  border: 1px solid #929292;
 }
 
 .lightgrey-border {
-  border: 1px solid #a0a0a0;
+  border: 1px solid #f2f2f2;
 }
 
 .highlight-border {
-  border: 1px solid #de1500;
+  border: 1px solid #ff4559;
 }
 
 .oppositelight-border {
@@ -83,48 +84,42 @@
 }
 
 h1 {
-  font-family: "Noto Sans CJK JP Bold", sans-serif;
-  font-weight: bold;
+  font-family: "Noto Sans CJK JP", sans-serif;
   font-size: 37px;
   margin-top: 18px;
   margin-bottom: 8px;
 }
 
 h2 {
-  font-family: "Noto Sans CJK JP Bold", sans-serif;
-  font-weight: bold;
+  font-family: "Noto Sans CJK JP", sans-serif;
   font-size: 34px;
   margin-top: 16px;
   margin-bottom: 8px;
 }
 
 h3 {
-  font-family: "Noto Sans CJK JP Bold", sans-serif;
-  font-weight: bold;
+  font-family: "Noto Sans CJK JP", sans-serif;
   font-size: 31px;
   margin-top: 14px;
   margin-bottom: 8px;
 }
 
 h4 {
-  font-family: "Noto Sans CJK JP Bold", sans-serif;
-  font-weight: bold;
+  font-family: "Noto Sans CJK JP", sans-serif;
   font-size: 28px;
   margin-top: 12px;
   margin-bottom: 8px;
 }
 
 h5 {
-  font-family: "Noto Sans CJK JP Bold", sans-serif;
-  font-weight: bold;
+  font-family: "Noto Sans CJK JP", sans-serif;
   font-size: 25px;
   margin-top: 10px;
   margin-bottom: 8px;
 }
 
 h6 {
-  font-family: "Noto Sans CJK JP Bold", sans-serif;
-  font-weight: bold;
+  font-family: "Noto Sans CJK JP", sans-serif;
   font-size: 22px;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -138,7 +133,7 @@ p {
 
 .hy-top-menu {
   position: relative;
-  background-color: black;
+  background-color: #252525;
   top: 0;
   left: 0;
   right: 0;
@@ -148,7 +143,7 @@ p {
   padding-right: 16px;
   color: white;
 }
-.hy-top-menu .logo {
+.hy-top-menu > .logo {
   display: inline-block;
   position: absolute;
   left: 0;
@@ -156,18 +151,18 @@ p {
   height: 56px;
   min-width: 192px;
 }
-.hy-top-menu .logo img {
+.hy-top-menu > .logo > img {
   position: relative;
   display: inline-block;
   height: 56px;
 }
-.hy-top-menu .logo span {
+.hy-top-menu > .logo > span {
   position: absolute;
   line-height: 56px;
   font-size: 24px;
   color: white;
 }
-.hy-top-menu .center-menu {
+.hy-top-menu > .center-menu {
   position: absolute;
   margin: auto;
   left: 0;
@@ -176,7 +171,7 @@ p {
   padding: 8px;
   text-align: center;
 }
-.hy-top-menu .center-menu a {
+.hy-top-menu > .center-menu > a {
   -webkit-transition: all .3s;
   transition: all .3s;
   display: inline-table;
@@ -187,10 +182,10 @@ p {
   color: white;
   text-decoration: none;
 }
-.hy-top-menu .center-menu a:hover {
-  border-bottom: 8px solid #de1500;
+.hy-top-menu > .center-menu > a:hover {
+  border-bottom: 8px solid #ff4559;
 }
-.hy-top-menu .center-menu a:after {
+.hy-top-menu > .center-menu > a:after {
   position: absolute;
   content: attr(data-sub);
   left: 0;
@@ -198,9 +193,9 @@ p {
   right: 0;
   text-align: center;
   font-size: 8px;
-  color: #a0a0a0;
+  color: #f2f2f2;
 }
-.hy-top-menu .right-menu {
+.hy-top-menu > .right-menu {
   position: absolute;
   margin: auto;
   right: 0;
@@ -208,22 +203,66 @@ p {
   height: 56px;
   min-width: 192px;
 }
-.hy-top-menu .right-menu a {
+.hy-top-menu > .right-menu > a {
+  -webkit-transition: all .3s;
+  transition: all .3s;
   display: inline-table;
   height: 56px;
   position: relative;
+  text-decoration: none;
+  text-align: center;
+  padding-left: 8px;
+  padding-right: 8px;
 }
-.hy-top-menu .right-menu a img {
+.hy-top-menu > .right-menu > a:hover {
+  border-bottom: 8px solid #ff4559;
+}
+.hy-top-menu > .right-menu > a > img {
   position: absolute;
   display: inline-block;
   height: 56px;
 }
-.hy-top-menu .right-menu a img + span {
+.hy-top-menu > .right-menu > a > img + span {
   margin-left: 56px;
 }
-.hy-top-menu .right-menu a span {
+.hy-top-menu > .right-menu > a > span {
   position: relative;
   line-height: 56px;
+  color: white;
+  min-width: 72px;
+}
+.hy-top-menu > .right-menu > a > span:after {
+  content: attr(data-sub);
+  color: #f2f2f2;
+  position: absolute;
+  text-align: center;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  font-size: 8px;
+}
+.hy-top-menu > .right-menu > ul {
+  display: inline-block;
+  position: absolute;
+  background-color: #252525;
+  list-style-type: none;
+  top: 72px;
+  right: 0px;
+  width: 256px;
+  padding: 0px;
+  z-index: 1;
+}
+.hy-top-menu > .right-menu > ul > li {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.hy-top-menu > .right-menu > ul > li:hover {
+  background-color: #929292;
+}
+.hy-top-menu > .right-menu > ul > li > a {
+  text-decoration: none;
   color: white;
 }
 
@@ -249,7 +288,7 @@ p {
 
 .hy-footer {
   position: relative;
-  background-color: black;
+  background-color: #252525;
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 16px;
@@ -277,6 +316,11 @@ p {
   color: white;
   text-decoration: none;
   font-size: 16px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.hy-footer > div > ul a:hover {
+  background-color: #929292;
 }
 .hy-footer > div > div.link {
   position: absolute;
@@ -287,6 +331,11 @@ p {
   display: inline-table;
   color: white;
   text-decoration: none;
+  margin-right: 8px;
+  margin-left: 8px;
+}
+.hy-footer > div > div.link a > i {
+  font-size: 32px;
 }
 
 .hy-form-text, .hy-form-text-label, .hy-form-text-button {
@@ -296,7 +345,8 @@ p {
 .hy-form-text > input[type="text"], .hy-form-text-label > input[type="text"], .hy-form-text-button > input[type="text"], .hy-form-text > input[type="email"], .hy-form-text-label > input[type="email"], .hy-form-text-button > input[type="email"], .hy-form-text > input[type="password"], .hy-form-text-label > input[type="password"], .hy-form-text-button > input[type="password"], .hy-form-text > input[type="number"], .hy-form-text-label > input[type="number"], .hy-form-text-button > input[type="number"], .hy-form-text > input[type="date"], .hy-form-text-label > input[type="date"], .hy-form-text-button > input[type="date"], .hy-form-text > textarea, .hy-form-text-label > textarea, .hy-form-text-button > textarea {
   min-width: 400px;
   min-height: 40px;
-  border: 1px #505050;
+  border: 1px #929292;
+  font-size: 16px;
   border-radius: 2px;
   padding-left: 8px;
   padding-right: 8px;
@@ -318,16 +368,16 @@ p {
 .hy-form-text-label > label {
   display: block;
   position: absolute;
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
   top: -24px;
-  font-weight: bolder;
   font-size: 12px;
 }
 
 .hy-form-button, .hy-form-text-button > button {
   -webkit-transition: all .3s;
   transition: all .3s;
-  background-color: #505050;
-  border: 1px solid #505050;
+  background-color: #929292;
+  border: 1px solid #929292;
   border-radius: 2px;
   color: white;
   display: inline-block;
@@ -337,33 +387,34 @@ p {
   text-decoration: none;
   outline: none;
   line-height: 40px;
+  font-size: 16px;
 }
 .hy-form-button:hover, .hy-form-text-button > button:hover, .hy-form-button.inactive, .hy-form-text-button > button.inactive {
   background-color: white;
-  border-color: #505050;
-  color: #505050;
+  border-color: #929292;
+  color: #929292;
 }
 .hy-form-button.inactive:hover, .hy-form-text-button > button.inactive:hover {
-  background-color: #505050;
-  border: 1px solid #505050;
+  background-color: #929292;
+  border: 1px solid #929292;
   color: white;
 }
 .hy-form-button.main, .hy-form-text-button > button.main {
   -webkit-transition: all .3s;
   transition: all .3s;
-  background-color: #de1500;
-  border: 1px solid #de1500;
+  background-color: #ff4559;
+  border: 1px solid #ff4559;
   border-radius: 2px;
   color: white;
 }
 .hy-form-button.main:hover, .hy-form-text-button > button.main:hover, .hy-form-button.main.inactive, .hy-form-text-button > button.main.inactive {
   background-color: white;
-  border-color: #de1500;
-  color: #de1500;
+  border-color: #ff4559;
+  color: #ff4559;
 }
 .hy-form-button.main.inactive:hover, .hy-form-text-button > button.main.inactive:hover {
-  background-color: #de1500;
-  border: 1px solid #de1500;
+  background-color: #ff4559;
+  border: 1px solid #ff4559;
   color: white;
 }
 .hy-form-button.sub, .hy-form-text-button > button.sub {
@@ -407,9 +458,10 @@ button.hy-form-button, .hy-form-text-button > button {
   border-radius: 2px 0px 0px 2px;
 }
 .hy-form-text-button > button {
-  min-width: 0;
+  min-width: 0px;
   padding-left: 8px;
   padding-right: 8px;
+  margin: 0px;
   border-radius: 0px 2px 2px 0px;
 }
 
@@ -425,7 +477,7 @@ button.hy-form-button, .hy-form-text-button > button {
   top: 0;
   right: 0;
   display: block;
-  background: #de1500;
+  background: #ff4559;
   color: white;
   padding-right: 8px;
   padding-left: 8px;
@@ -438,6 +490,7 @@ button.hy-form-button, .hy-form-text-button > button {
   display: inline-block;
   position: absolute;
   top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
   background-color: transparent;
@@ -455,19 +508,21 @@ button.hy-form-button, .hy-form-text-button > button {
   bottom: 8px;
   left: 8px;
 }
+.hy-hoverable-image:hover {
+  transform: scale(1.05);
+  z-index: 1;
+}
 .hy-hoverable-image:hover > div {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
 }
 
 .hy-card {
-  box-shadow: 9px 9px 10px -5px #a0a0a0;
   -webkit-transition: all .3s;
   transition: all .3s;
   display: inline-block;
   position: relative;
-  width: 256px;
-  padding: 8px;
+  width: 192px;
   background-color: white;
   text-decoration: none;
 }
@@ -477,7 +532,7 @@ button.hy-form-button, .hy-form-text-button > button {
   top: 0;
   right: 0;
   display: block;
-  background: #de1500;
+  background: #ff4559;
   color: white;
   padding-right: 8px;
   padding-left: 8px;
@@ -488,60 +543,64 @@ button.hy-form-button, .hy-form-text-button > button {
   position: relative;
   display: inline-block;
   width: 100%;
-  height: 192px;
+  height: 256px;
   overflow: hidden;
 }
-.hy-card > span > * {
+.hy-card > span > img {
   position: absolute;
   left: -100%;
   right: -100%;
   margin: auto;
   width: auto;
-  height: 192px;
-}
-.hy-card > .cover {
-  -webkit-transition: all .3s;
-  transition: all .3s;
-  display: inline-block;
-  position: absolute;
-  top: 8px;
-  height: 176px;
-  width: 240px;
-  background-color: transparent;
-  color: transparent;
-  padding: 8px;
-}
-.hy-card > .cover > .main {
-  display: block;
-  position: absolute;
-  bottom: 56px;
-  left: 8px;
-}
-.hy-card > .cover > .sub {
-  display: block;
-  position: absolute;
-  bottom: 8px;
-  left: 8px;
+  height: 256px;
 }
 .hy-card:hover {
   transform: scale(1.05);
 }
-.hy-card:hover > .cover {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-}
 .hy-card > .message {
-  color: #505050;
+  color: #929292;
+  padding: 8px;
+  margin-top: -5px;
+  color: #929292;
+  background-color: #f2f2f2;
+  border-top: 1px solid #929292;
+  border-bottom: 1px solid #929292;
+}
+.hy-card > .message > .titles {
+  display: inline-block;
+  width: calc(100% - 40px);
+  overflow: hidden;
+}
+.hy-card > .message > .titles > .title {
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
+}
+.hy-card > .message > .titles > .sub-title {
+  font-size: 12px;
+}
+.hy-card > .message > .status {
+  display: inline-block;
+  width: 40px;
+  float: right;
+  text-align: center;
+}
+.hy-card > .message > .status > .star.on {
+  color: #ff4559;
+}
+.hy-card > .message > .status > .number {
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
+  font-size: 12px;
 }
 
 .hy-img-card-layout {
-  width: 1168px;
   position: relative;
   margin: auto;
+  width: 100%;
+  text-align: center;
 }
 .hy-img-card-layout > * {
-  margin-right: 40px;
-  margin-bottom: 40px;
+  text-align: left;
+  margin-right: 16px;
+  margin-bottom: 16px;
 }
 
 .hy-icon-large {
@@ -585,9 +644,9 @@ button.hy-form-button, .hy-form-text-button > button {
   -webkit-transition: all .3s;
   transition: all .3s;
   background-color: white;
-  border: 1px solid #505050;
+  border: 1px solid #929292;
   border-radius: 2px;
-  color: #505050;
+  color: #929292;
   background-color: transparent;
   border: 0px;
   text-decoration: none;
@@ -599,8 +658,8 @@ button.hy-form-button, .hy-form-text-button > button {
   margin-right: 8px;
 }
 .hy-pagenate > a:hover {
-  background-color: #505050;
-  border-color: #505050;
+  background-color: #929292;
+  border-color: #929292;
   color: white;
 }
 .hy-pagenate > a.prev:before {
@@ -614,38 +673,54 @@ button.hy-form-button, .hy-form-text-button > button {
 .hy-pagenate > .jump:nth-child(4) {
   -webkit-transition: all .3s;
   transition: all .3s;
-  background-color: #505050;
-  border: 1px solid #505050;
+  background-color: #929292;
+  border: 1px solid #929292;
   border-radius: 2px;
   color: white;
+  border-color: transparent;
 }
 .hy-pagenate > .jump:nth-child(4):hover, .hy-pagenate > .jump:nth-child(4).inactive {
   background-color: white;
-  border-color: #505050;
-  color: #505050;
+  border-color: #929292;
+  color: #929292;
 }
 .hy-pagenate > .jump:nth-child(4).inactive:hover {
-  background-color: #505050;
-  border: 1px solid #505050;
+  background-color: #929292;
+  border: 1px solid #929292;
   color: white;
+}
+.hy-pagenate > .jump:nth-child(4):hover {
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .hy-separator {
   border: none;
-  background-color: #a0a0a0;
+  background-color: #929292;
   height: 1px;
 }
 
 .hy-header {
+  position: relative;
   text-align: center;
+  margin-bottom: 24px;
 }
-.hy-header::before {
+.hy-header:before {
   position: relative;
   content: "-";
 }
-.hy-header::after {
+.hy-header:after {
   position: relative;
-  content: "-";
+  content: "-" attr(data-sub);
+}
+.hy-header > span {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  font-size: 16px;
+  bottom: -16px;
+  color: #929292;
 }
 
 .hy-text-label {
@@ -656,18 +731,22 @@ button.hy-form-button, .hy-form-text-button > button {
   position: absolute;
   top: 8px;
   font-size: 12px;
-  font-family: "Noto Sans CJK JP Bold", sans-serif;
+  font-family: "Noto Sans CJK JP", sans-serif;
 }
 
 .hy-box {
-  box-shadow: 9px 9px 10px -5px #a0a0a0;
   display: inline-block;
   padding: 16px;
   margin: 16px;
 }
 
 .hy-slider .slick-slide {
+  -webkit-transition: all .3s;
+  transition: all .3s;
   margin: 0px 8px;
+}
+.hy-slider .slick-slide:hover {
+  transform: scale(1.05);
 }
 .hy-slider .slick-slide img {
   width: 100%;
@@ -687,16 +766,20 @@ button.hy-form-button, .hy-form-text-button > button {
   right: 0;
 }
 .hy-slider > button.slick-next:before {
+  content: "";
+}
+.hy-slider > button.slick-next:after {
   content: ">";
 }
-.hy-slider > button:before {
+.hy-slider > button:before, .hy-slider > button:after {
   -webkit-transition: all .3s;
   transition: all .3s;
-  color: #a0a0a0;
+  color: #f2f2f2;
   font-size: 72px;
+  font-family: "Noto Sans CJK JP", sans-serif;
 }
-.hy-slider > button:hover:before {
-  color: #505050;
+.hy-slider > button:hover:before, .hy-slider > button:hover:after {
+  color: #929292;
   font-size: 88px;
 }
 
@@ -705,7 +788,7 @@ button.hy-form-button, .hy-form-text-button > button {
 }
 
 .hy-flush {
-  font-family: "Noto Sans CJK JP Bold", sans-serif;
+  font-family: "Noto Sans CJK JP", sans-serif;
   border-width: 1px;
   border-style: solid;
   margin-top: 8px;
@@ -714,13 +797,13 @@ button.hy-form-button, .hy-form-text-button > button {
   padding-bottom: 8px;
   padding-left: 40px;
   padding-right: 24px;
-  border-color: #505050;
+  border-color: #929292;
   background-color: rgba(200, 200, 200, 0.1);
-  color: #505050;
+  color: #929292;
 }
 .hy-flush.alert {
-  color: #de1500;
-  border-color: #de1500;
+  color: #ff4559;
+  border-color: #ff4559;
   background-color: rgba(200, 0, 0, 0.1);
 }
 .hy-flush.message {
@@ -731,12 +814,31 @@ button.hy-form-button, .hy-form-text-button > button {
 
 .hy-read-more {
   text-decoration: none;
+  color: #929292;
 }
 .hy-read-more::after {
   content: ">";
   position: relative;
   left: 8px;
   text-decoration: none;
+  display: inline-block;
+}
+.hy-read-more.hy-form-button, .hy-form-text-button > button.hy-read-more {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  background-color: white;
+  border: 1px solid #929292;
+  border-radius: 2px;
+  color: #929292;
+  position: relative;
+}
+.hy-read-more.hy-form-button:hover, .hy-form-text-button > button.hy-read-more:hover {
+  background-color: #929292;
+  border-color: #929292;
+  color: white;
+}
+.hy-read-more.hy-form-button:after, .hy-form-text-button > button.hy-read-more:after {
+  z-index: 1;
 }
 
 .hy-comment {
@@ -757,7 +859,7 @@ button.hy-form-button, .hy-form-text-button > button {
   margin-left: 136px;
 }
 .hy-comment > div > .header > .name {
-  font-weight: bolder;
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
 }
 .hy-comment > div > .header > * {
   margin-right: 16px;
@@ -778,9 +880,27 @@ button.hy-form-button, .hy-form-text-button > button {
   display: block;
   margin-top: 8px;
   margin-bottom: 8px;
-  font-weight: bolder;
-  color: black;
+  font-family: "Noto Sans CJK JP", sans-serif;
+  color: #252525;
   padding-top: 16px;
+}
+.hy-news > span {
+  display: inline-block;
+  line-height: 24px;
+  height: 24px;
+  overflow: hidden;
+}
+.hy-news > span.date {
+  width: 72px;
+  margin-right: 16px;
+}
+.hy-news > span.title {
+  width: 192px;
+  margin-right: 16px;
+}
+.hy-news > span.description {
+  margin-bottom: -5px;
+  width: calc( 100% - 320px );
 }
 .hy-news > hr {
   width: 40px;
@@ -796,7 +916,7 @@ button.hy-form-button, .hy-form-text-button > button {
   display: none;
 }
 .hy-news:hover {
-  background-color: #a0a0a0;
+  background-color: #f2f2f2;
 }
 
 .hy-main-image {
@@ -809,7 +929,8 @@ button.hy-form-button, .hy-form-text-button > button {
 }
 
 .hy-sub-image {
-  box-shadow: 9px 9px 10px -5px #a0a0a0;
+  -webkit-transition: all .3s;
+  transition: all .3s;
   position: relative;
   width: 104px;
   height: 104px;
@@ -825,23 +946,42 @@ button.hy-form-button, .hy-form-text-button > button {
   left: -100%;
   right: -100%;
 }
+.hy-sub-image:hover {
+  transform: scale(1.05);
+}
 
 .hy-tag {
+  -webkit-transition: all .3s;
+  transition: all .3s;
   display: inline-block;
   margin-right: 8px;
   margin-left: 8px;
   border-radius: 16px;
   line-height: 16px;
-  padding-left: 12px;
+  padding-left: 16px;
   padding-right: 16px;
   padding-top: 8px;
   padding-bottom: 8px;
 }
 .hy-tag:after {
   display: inline-block;
-  content: "X";
+  content: "×";
   background-color: white;
-  color: #a0a0a0;
+  color: #929292;
+  border-radius: 10px;
+  margin-left: 4px;
+  font-size: 12px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+}
+.hy-tag:hover {
+  transform: scale(1.05);
+}
+
+.hy-shadow {
+  box-shadow: 9px 9px 10px -5px #f2f2f2;
 }
 
 /*# sourceMappingURL=hy_template.css.map */
