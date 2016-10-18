@@ -5,26 +5,38 @@
 	<title>テンプレート集</title>
 
 	<!-- jQuery -->
-	<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+	<script src="js/jquery.js" type="text/javascript"></script>
+
+
+	<!-- jQuery UI -->
+	<link rel="stylesheet" href="css/jquery-ui.css" />
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.ui.datepicker-ja.min.js"></script>
+
 
 	<!-- Slick -->
  	<link rel="stylesheet" type="text/css" href="css/slick.css">
  	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
 	<script src="js/slick.min.js" type="text/javascript" charset="utf-8" async defer></script> 
 
+
 	<!-- Remodal -->
  	<link rel="stylesheet" type="text/css" href="css/remodal.css">
  	<link rel="stylesheet" type="text/css" href="css/remodal-default-theme.css">
-	<script src="js/remodal.js" type="text/javascript" charset="utf-8" async defer></script> 
+	<script src="js/remodal.js" type="text/javascript" charset="utf-8" async defer></script>
+
 
 	<!-- Lazy Load -->
-	<script src="js/jquery.lazyload.js" type="text/javascript" charset="utf-8" async defer></script> 
+	<script src="js/jquery.lazyload.js" type="text/javascript" charset="utf-8" async defer></script>
+
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
 
+
+	<!-- HY Template -->
 	<link rel="stylesheet" type="text/css" href="sass/hy_template.css">
-	<script src="js/hy_template.js" type="text/javascript" charset="utf-8" async defer></script>
+
 
 	<style type="text/css" media="screen">
 		div.content{
@@ -201,7 +213,7 @@
 			</div>
 		</li>
 		<li>
-			<h3>テキスト2</h3>
+			<h3>ラベル　テキスト</h3>
 			<p>hy-form-text-label</p>
 			<div class="content">
 				<div class="hy-form-text-label">
@@ -214,6 +226,22 @@
 					<textarea id="hy-form-textarea-label" type="text" name="hy-form-textarea-label" value="" placeholder="hy-form-textarea">test</textarea>
 				</div>
 
+			</div>
+		</li>
+		<li>
+			<h3>バリデーション</h3>
+			<p>hy-validate</p>
+			<div class="content">
+				<div class="hy-form-text-label">
+					<label for="hy-validate">hy-validate</label>
+					<input id="hy-validate" class="hy-validate" type="text" name="hy-form-text-label" value="" placeholder="hy-form-text-label" data-validate-result="hy-validate-message"  data-validate-success="利用可能です。" data-validate-fail="6文字~15文字かつ英数字を含めて下さい。" data-validate-url="http://google.com"/>
+					<span class="hy-validate-message" id="hy-validate-message" />
+				</div>
+				<div class="hy-form-text-label">
+					<label for="hy-validate-textarea">hy-validate</label>
+					<textarea id="hy-validate-textarea" class="hy-validate" type="text" name="hy-form-text-label" value="" placeholder="hy-form-text-label" data-validate-result="hy-validate-message-textarea"  data-validate-success="利用可能です。" data-validate-fail="6文字~15文字かつ英数字を含めて下さい。" data-validate-url="http://google.com"></textarea>
+					<span class="hy-validate-message" id="hy-validate-message-textarea" />
+				</div>
 			</div>
 		</li>
 		<li>
@@ -248,11 +276,11 @@
 		</li>
 		<li>
 			<h3>カレンダー</h3>
-			<p>hy-form-calender</p>
+			<p>hy-datepicker</p>
 			<div class="content">
 				<form>
 					<div class="hy-form-text">
-						<input type="date"/>
+						<input type="text" class="hy-datepicker" name=""/>
 					</div>
 				</form>
 			</div>
@@ -261,6 +289,16 @@
 			<h3>AjaxLink</h3>
 			<p>hy-top-menu</p>
 			<div class="content">
+				<form action="http://google.com" method="get" accept-charset="utf-8">
+					<div class="hy-form-text-label">
+						<label for="hy-ajax-form-blur">hy-ajax-form-blur</label>
+						<input id="hy-ajax-form-blur" name="blur" type="text" class="hy-ajax-form" data-event="blur" />
+					</div>
+					<div class="hy-form-text-label">
+						<label for="hy-ajax-form-change">hy-ajax-form-change</label>
+						<input id="hy-ajax-form-change" name="change" type="text" class="hy-ajax-form" data-event="change" />
+					</div>
+				</form>
 			</div>
 		</li>
 		<li>
@@ -268,15 +306,14 @@
 			<p>hy-form-file</p>
 			<div class="content">
 				<form>
-					<div class="hy-form-file">
-						準備中
+					<div class="hy-form-file" data-url="http://google.com">
+						<img>
+						<div class="close">×</div>
 					</div>
 				</form>
 			</div>
 		</li>
-
 	</ul>
-
 
 	<hr/>
 
@@ -364,7 +401,7 @@
 			<h3>カード</h3>
 			<p>hy-card</p>
 			<div class="content">
-				<a class="hy-card" href="#">
+				<a class="hy-card">
 					<span>
 						<img src="img/cat.jpg">
 					</span>
@@ -871,7 +908,7 @@
 		</li>
 	</ul>
 
-
+	<script src="js/hy_template.js" type="text/javascript" charset="utf-8" async defer></script>
 
 </body>
 </html>

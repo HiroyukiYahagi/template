@@ -373,6 +373,35 @@ p {
   font-size: 12px;
 }
 
+textarea.hy-validate.success, textarea.hy-validate.fail,
+input.hy-validate.success,
+input.hy-validate.fail {
+  margin-bottom: 16px;
+}
+textarea.hy-validate.fail,
+input.hy-validate.fail {
+  border: 1px solid #ff4559;
+}
+textarea.hy-validate + .hy-validate-message,
+input.hy-validate + .hy-validate-message {
+  content: attr(data-validation-message);
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  font-size: 12px;
+  left: 8px;
+}
+textarea.hy-validate.success + .hy-validate-message,
+input.hy-validate.success + .hy-validate-message {
+  color: #00b3de;
+  display: inline-block;
+}
+textarea.hy-validate.fail + .hy-validate-message,
+input.hy-validate.fail + .hy-validate-message {
+  color: #ff4559;
+  display: inline-block;
+}
+
 .hy-form-button, .hy-form-text-button > button {
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -731,7 +760,7 @@ button.hy-form-button, .hy-form-text-button > button {
   position: absolute;
   top: 8px;
   font-size: 12px;
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
 }
 
 .hy-box {
@@ -891,10 +920,12 @@ button.hy-form-button, .hy-form-text-button > button {
   overflow: hidden;
 }
 .hy-news > span.date {
-  width: 72px;
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
+  width: 88px;
   margin-right: 16px;
 }
 .hy-news > span.title {
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
   width: 192px;
   margin-right: 16px;
 }
@@ -982,6 +1013,53 @@ button.hy-form-button, .hy-form-text-button > button {
 
 .hy-shadow {
   box-shadow: 9px 9px 10px -5px #f2f2f2;
+}
+
+.hy-form-file {
+  display: inline-block;
+  position: relative;
+  width: 320px;
+  height: 192px;
+  border: 5px dotted #929292;
+}
+.hy-form-file > img {
+  z-index: 3;
+  position: absolute;
+  weight: 100%;
+  height: 100%;
+}
+.hy-form-file > img {
+  z-index: 5;
+  position: absolute;
+  background-color: #929292;
+  weight: 100%;
+  height: 100%;
+}
+.hy-form-file:before {
+  content: "ファイルをドロップしてください";
+  z-index: 1;
+  position: absolute;
+  display: block;
+  color: #929292;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 24px;
+  text-align: center;
+}
+.hy-form-file > .close {
+  display: none;
+  position: absolute;
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
+  right: 0px;
+  top: 0px;
+  text-align: center;
+  height: 24px;
+  width: 24px;
+  z-index: 10;
+  color: #929292;
 }
 
 /*# sourceMappingURL=hy_template.css.map */

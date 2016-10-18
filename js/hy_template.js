@@ -1,4 +1,30 @@
+var uploadFiles = function(node, file) {
+	var fd = new FormData();
+	fd.append("file", file);
+
+	$.ajax({
+	    url: $(node).data('url'),
+	    type: 'POST',
+	    data: fd,
+	    processData: false,
+	    contentType: false,
+	    success: function(data, status, jqXHR) {
+	        console.log(data);
+	        //画像を設定
+	        $(node).children('img').attr('src', data);
+	        //閉じるボタンを有効化
+	        $(node).children('.close').css('display', 'block');
+	        //コンポーネントを追加
+	        $(node).clone(true).insertAfter(node).children('.close').css('display', 'none');
+	    },
+	    error: function(jqXHR, textStatus, errorThrown){
+	    	alert(errorThrown);
+	    },
+	});
+}
+
 var initTemplate = function (){
+
 	//
 	// menu
 	//
@@ -6,12 +32,127 @@ var initTemplate = function (){
 	$(".hy-top-menu a").click(function(event) {
 		var targetId = $(this).attr('for');
 		var isHidden = ($("#" + targetId).css('display') === "none");
-
 		$(".hy-top-menu ul").hide('300');
 		if(isHidden){
 			$("#" + targetId).show('300');
 		}
 		return false;
+	});
+
+	//
+	// form validation
+	//
+	$(".hy-validate").blur(function(event) {
+		$.ajax({
+		    url: $(this).data("validate-url"),
+		    type: 'POST',
+		    data: {
+		    	"data": $(this).val(), 
+		    },
+		    processData: false,
+		    contentType: false,
+		    context: this,
+		    success: function(data, status, jqXHR) {
+		    	if(data.result){
+		        	var targetId = $(this).data('validate-result');
+	    			$('#' + targetId).text($(this).data('validate-success'));
+		        	$(this).removeClass('fail');
+		        	$(this).addClass('success');
+		    	}else{
+		    		var targetId = $(this).data('validate-result');
+	    			$('#' + targetId).text($(this).data('validate-fail'));
+		    		$(this).removeClass('success');
+		        	$(this).addClass('fail');
+		    	}
+		    },
+		    error: function(jqXHR, textStatus, errorThrown){
+	    		var targetId = $(this).data('validate-result');
+	    		$('#' + targetId).text($(this).data('validate-fail'));
+	    		$(this).removeClass('success');
+		        $(this).addClass('fail');
+	    	},
+		});
+	});
+
+	//
+	// ajax form
+	//
+	$('.hy-ajax-form').each(function(index, el) {
+		$(this).on( $(this).data('event'), function(event) {
+			var value = $(this).val();
+			var url = $(this).parents('form').attr('action');
+			var name = $(this).attr('name');
+			$.ajax({
+			    url: url,
+			    type: 'POST',
+			    data: {
+			    	name: value, 
+			    },
+			    processData: false,
+			    contentType: false,
+			    context: this,
+			});
+		});
+	});
+
+
+
+	//
+	// form-file
+	//
+    $('.hy-form-file').bind('drop', function(event){
+        event.preventDefault();
+        $(this).children('.img-base').remove();
+        var file = event.originalEvent.dataTransfer.files[0];
+        if (!/^image\/(png|jpeg|gif)$/.test(file.type)) {
+            alert('画像ファイル以外は利用できません');
+            return;
+        }
+        uploadFiles(this, file);
+    }).bind('dragenter', function(){
+        return false;
+    }).bind('dragover', function(){
+        return false;
+    });
+    $('.hy-form-file > .close').click(function(event) {
+        $(this).parent().remove();
+    });
+
+
+	//
+	//card
+	//
+	$(".hy-card").each(function(index, el) {
+		$(this).find('.message > .status > .star').click(function(event) {
+			var on = $(this).hasClass('on')
+			var toUrl = $(this).data('url');
+			if(on){
+				$(this).removeClass('on');
+			}else{
+				$(this).addClass('on');
+			}
+			on = !on;
+
+			$.ajax({
+			    type: 'GET',
+			    url: toUrl + 'mode=' + on,
+			    timeout: 10000,
+			    cache: false,
+			    dataType: 'json',
+			    context: this,
+			    complete: function(response, textStatus, jqXHR) {
+			    	var $numberField = $(this).parent().children('.number');
+					var num = $numberField.text();
+					if(on){
+						var newNum = Number(num) + 1;
+					}else{
+						var newNum = Number(num) - 1;	
+					}
+					$numberField.text(newNum);
+				},
+			});
+			return false;
+		});
 	});
 
 	//
@@ -87,9 +228,19 @@ var initTemplate = function (){
 	// LazyLoad
 	//
 	$('img.lazy').lazyload();
+
+
+	//
+	// datePicker
+	//
+	$.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
+    $( ".hy-datepicker" ).datepicker();
+
 }
+
+
+
 
 $(document).ready(function() {
 	initTemplate();
-
 });
