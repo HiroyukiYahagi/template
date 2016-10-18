@@ -1,11 +1,11 @@
 @charset "UTF-8";
 @font-face {
   font-family: 'Noto Sans CJK JP';
-  src: url(../fonts/NotoSansCJKjp-Thin.otf);
+  src: url(./fonts/NotoSansCJKjp-Thin.otf);
 }
 @font-face {
   font-family: 'Noto Sans CJK JP Bold';
-  src: url(../fonts/NotoSansCJKjp-Bold.otf);
+  src: url(./fonts/NotoSansCJKjp-Bold.otf);
 }
 * {
   font-family: "Noto Sans CJK JP", sans-serif;
