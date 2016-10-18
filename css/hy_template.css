@@ -65,6 +65,10 @@ img {
   background-color: white;
 }
 
+.clear {
+  background-color: transparent;
+}
+
 .black-border {
   border: 1px solid #252525;
 }
@@ -90,43 +94,49 @@ img {
 }
 
 h1 {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
   font-size: 37px;
+  font-weight: normal;
   margin-top: 18px;
   margin-bottom: 8px;
 }
 
 h2 {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
   font-size: 34px;
+  font-weight: normal;
   margin-top: 16px;
   margin-bottom: 8px;
 }
 
 h3 {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
   font-size: 31px;
+  font-weight: normal;
   margin-top: 14px;
   margin-bottom: 8px;
 }
 
 h4 {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
   font-size: 28px;
+  font-weight: normal;
   margin-top: 12px;
   margin-bottom: 8px;
 }
 
 h5 {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
   font-size: 25px;
+  font-weight: normal;
   margin-top: 10px;
   margin-bottom: 8px;
 }
 
 h6 {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Sans CJK JP Bold", sans-serif;
   font-size: 22px;
+  font-weight: normal;
   margin-top: 8px;
   margin-bottom: 8px;
 }
@@ -198,8 +208,8 @@ p {
   top: 16px;
   right: 0;
   text-align: center;
-  font-size: 8px;
-  color: #f2f2f2;
+  font-size: 12px;
+  color: #929292;
 }
 .hy-top-menu > .right-menu {
   position: absolute;
@@ -239,13 +249,13 @@ p {
 }
 .hy-top-menu > .right-menu > a > span:after {
   content: attr(data-sub);
-  color: #f2f2f2;
+  color: #929292;
   position: absolute;
   text-align: center;
   left: 0px;
   right: 0px;
   top: 0px;
-  font-size: 8px;
+  font-size: 12px;
 }
 .hy-top-menu > .right-menu > ul {
   display: inline-block;
@@ -276,7 +286,6 @@ p {
   display: block;
   position: relative;
   min-width: 1024px;
-  background-color: white;
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 16px;
@@ -416,6 +425,7 @@ input.hy-validate.fail + .hy-validate-message {
   border-radius: 2px;
   color: white;
   display: inline-block;
+  position: relative;
   min-width: 192px;
   min-height: 40px;
   text-align: center;
@@ -483,6 +493,15 @@ input.hy-validate.fail + .hy-validate-message {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.hy-form-button > span, .hy-form-text-button > button > span {
+  display: block;
+  position: relative;
+  bottom: 0px;
+  font-size: 12px;
+  line-height: 12px;
+  margin-bottom: 12px;
+  margin-top: -8px;
+}
 
 button.hy-form-button, .hy-form-text-button > button {
   padding: 0;
@@ -493,7 +512,7 @@ button.hy-form-button, .hy-form-text-button > button {
   border-radius: 2px 0px 0px 2px;
 }
 .hy-form-text-button > button {
-  min-width: 0px;
+  min-width: 40px;
   padding-left: 8px;
   padding-right: 8px;
   margin: 0px;
@@ -557,7 +576,7 @@ button.hy-form-button, .hy-form-text-button > button {
   transition: all .3s;
   display: inline-block;
   position: relative;
-  width: 192px;
+  width: 216px;
   background-color: white;
   text-decoration: none;
 }
@@ -746,7 +765,7 @@ button.hy-form-button, .hy-form-text-button > button {
 }
 .hy-header:after {
   position: relative;
-  content: "-" attr(data-sub);
+  content: "-";
 }
 .hy-header > span {
   position: absolute;
@@ -1066,6 +1085,13 @@ button.hy-form-button, .hy-form-text-button > button {
   width: 24px;
   z-index: 10;
   color: #929292;
+}
+
+.hy-center {
+  text-align: center;
+}
+.hy-center > * {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=hy_template.css.map */

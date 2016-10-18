@@ -36,7 +36,6 @@ var initTemplate = function (){
 		if(isHidden){
 			$("#" + targetId).show('300');
 		}
-		return false;
 	});
 
 	//
@@ -181,6 +180,7 @@ var initTemplate = function (){
 		$(this).show(300);
 	});
 	$(".hy-tab-menu > button").click(function(){
+		console.log("fire");
 		$(".hy-tab-menu > button").addClass("inactive");	
 		$(this).removeClass("inactive");
 
@@ -188,7 +188,7 @@ var initTemplate = function (){
 		$(".hy-tab-content > *").hide(100);
 		$("#" + targetId).show(300);
 	});
-
+	$(".hy-tab-menu > button[for='" + $(location).attr('hash').slice(1) + "']").trigger('click');
 
 	//
 	// flush
@@ -228,7 +228,7 @@ var initTemplate = function (){
 	// LazyLoad
 	//
 	$('img.lazy').lazyload();
-
+	
 
 	//
 	// datePicker
@@ -237,8 +237,6 @@ var initTemplate = function (){
     $( ".hy-datepicker" ).datepicker();
 
 }
-
-
 
 
 $(document).ready(function() {
