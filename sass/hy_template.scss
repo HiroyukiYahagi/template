@@ -44,6 +44,12 @@ $length-128: 1024px;
 
 * {
 	font-family: $font;
+	-webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+img{
+	max-width: none;
 }
 
 .black-text{

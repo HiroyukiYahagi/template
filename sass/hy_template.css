@@ -9,6 +9,12 @@
 }
 * {
   font-family: "Noto Sans CJK JP", sans-serif;
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+img {
+  max-width: none;
 }
 
 .black-text {
