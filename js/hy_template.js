@@ -119,10 +119,10 @@ var initTemplate = function (){
 
 
 	//
-	//card
+	//favorite
 	//
-	$(".hy-card").each(function(index, el) {
-		$(this).find('.message > .status > .star').click(function(event) {
+	$(".status").each(function(index, el) {
+		$(this).find('.star').click(function(event) {
 			var on = $(this).hasClass('on')
 			var toUrl = $(this).data('url');
 			if(on){
@@ -214,7 +214,7 @@ var initTemplate = function (){
 	//
 	// tag
 	//
-	$('.hy-tag').each(function(index, el) {
+	$('.hy-tag.close').each(function(index, el) {
 		var name = $(this).data('name');
 		$(this).click(function(event) {
 			$(this).hide(300);
@@ -228,7 +228,7 @@ var initTemplate = function (){
 	// LazyLoad
 	//
 	$('img.lazy').lazyload();
-	
+
 
 	//
 	// datePicker

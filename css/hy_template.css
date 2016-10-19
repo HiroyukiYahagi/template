@@ -288,8 +288,6 @@ p {
   min-width: 1024px;
   padding-top: 16px;
   padding-bottom: 16px;
-  padding-left: 16px;
-  padding-right: 16px;
 }
 .hy-main > * {
   position: relative;
@@ -306,8 +304,6 @@ p {
   background-color: #252525;
   padding-top: 40px;
   padding-bottom: 40px;
-  padding-left: 16px;
-  padding-right: 16px;
   min-width: 1024px;
 }
 .hy-footer > div {
@@ -417,7 +413,8 @@ input.hy-validate.fail + .hy-validate-message {
   display: inline-block;
 }
 
-.hy-form-button, .hy-form-text-button > button {
+button.hy-form-button, .hy-form-text-button > button,
+a.hy-form-button {
   -webkit-transition: all .3s;
   transition: all .3s;
   background-color: #929292;
@@ -434,17 +431,21 @@ input.hy-validate.fail + .hy-validate-message {
   line-height: 40px;
   font-size: 16px;
 }
-.hy-form-button:hover, .hy-form-text-button > button:hover, .hy-form-button.inactive, .hy-form-text-button > button.inactive {
+button.hy-form-button:hover, .hy-form-text-button > button:hover, button.hy-form-button.inactive, .hy-form-text-button > button.inactive,
+a.hy-form-button:hover,
+a.hy-form-button.inactive {
   background-color: white;
   border-color: #929292;
   color: #929292;
 }
-.hy-form-button.inactive:hover, .hy-form-text-button > button.inactive:hover {
+button.hy-form-button.inactive:hover, .hy-form-text-button > button.inactive:hover,
+a.hy-form-button.inactive:hover {
   background-color: #929292;
   border: 1px solid #929292;
   color: white;
 }
-.hy-form-button.main, .hy-form-text-button > button.main {
+button.hy-form-button.main, .hy-form-text-button > button.main,
+a.hy-form-button.main {
   -webkit-transition: all .3s;
   transition: all .3s;
   background-color: #ff4559;
@@ -452,17 +453,21 @@ input.hy-validate.fail + .hy-validate-message {
   border-radius: 2px;
   color: white;
 }
-.hy-form-button.main:hover, .hy-form-text-button > button.main:hover, .hy-form-button.main.inactive, .hy-form-text-button > button.main.inactive {
+button.hy-form-button.main:hover, .hy-form-text-button > button.main:hover, button.hy-form-button.main.inactive, .hy-form-text-button > button.main.inactive,
+a.hy-form-button.main:hover,
+a.hy-form-button.main.inactive {
   background-color: white;
   border-color: #ff4559;
   color: #ff4559;
 }
-.hy-form-button.main.inactive:hover, .hy-form-text-button > button.main.inactive:hover {
+button.hy-form-button.main.inactive:hover, .hy-form-text-button > button.main.inactive:hover,
+a.hy-form-button.main.inactive:hover {
   background-color: #ff4559;
   border: 1px solid #ff4559;
   color: white;
 }
-.hy-form-button.sub, .hy-form-text-button > button.sub {
+button.hy-form-button.sub, .hy-form-text-button > button.sub,
+a.hy-form-button.sub {
   -webkit-transition: all .3s;
   transition: all .3s;
   background-color: #00b3de;
@@ -470,30 +475,39 @@ input.hy-validate.fail + .hy-validate-message {
   border-radius: 2px;
   color: white;
 }
-.hy-form-button.sub:hover, .hy-form-text-button > button.sub:hover, .hy-form-button.sub.inactive, .hy-form-text-button > button.sub.inactive {
+button.hy-form-button.sub:hover, .hy-form-text-button > button.sub:hover, button.hy-form-button.sub.inactive, .hy-form-text-button > button.sub.inactive,
+a.hy-form-button.sub:hover,
+a.hy-form-button.sub.inactive {
   background-color: white;
   border-color: #00b3de;
   color: #00b3de;
 }
-.hy-form-button.sub.inactive:hover, .hy-form-text-button > button.sub.inactive:hover {
+button.hy-form-button.sub.inactive:hover, .hy-form-text-button > button.sub.inactive:hover,
+a.hy-form-button.sub.inactive:hover {
   background-color: #00b3de;
   border: 1px solid #00b3de;
   color: white;
 }
-.hy-form-button::before, .hy-form-text-button > button::before, .hy-form-button::after, .hy-form-text-button > button::after {
+button.hy-form-button::before, .hy-form-text-button > button::before, button.hy-form-button::after, .hy-form-text-button > button::after,
+a.hy-form-button::before,
+a.hy-form-button::after {
   position: absolute;
   z-index: -1;
   display: block;
   content: '';
 }
-.hy-form-button, .hy-form-text-button > button, .hy-form-button::before, .hy-form-text-button > button::before, .hy-form-button::after, .hy-form-text-button > button::after {
+button.hy-form-button, .hy-form-text-button > button, button.hy-form-button::before, .hy-form-text-button > button::before, button.hy-form-button::after, .hy-form-text-button > button::after,
+a.hy-form-button,
+a.hy-form-button::before,
+a.hy-form-button::after {
   -webkit-transition: all .3s;
   transition: all .3s;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-.hy-form-button > span, .hy-form-text-button > button > span {
+button.hy-form-button > span, .hy-form-text-button > button > span,
+a.hy-form-button > span {
   display: block;
   position: relative;
   bottom: 0px;
@@ -631,18 +645,22 @@ button.hy-form-button, .hy-form-text-button > button {
 .hy-card > .message > .titles > .sub-title {
   font-size: 12px;
 }
-.hy-card > .message > .status {
+.hy-card > .message > .titles > .status {
   display: inline-block;
   width: 40px;
   float: right;
   text-align: center;
 }
-.hy-card > .message > .status > .star.on {
+.hy-card > .message > .titles > .status > .star.on {
   color: #ff4559;
 }
-.hy-card > .message > .status > .number {
+.hy-card > .message > .titles > .status > .number {
   font-family: "Noto Sans CJK JP Bold", sans-serif;
   font-size: 12px;
+}
+
+.status > .star.on {
+  color: #ff4559;
 }
 
 .hy-img-card-layout {
@@ -664,6 +682,7 @@ button.hy-form-button, .hy-form-text-button > button {
   width: 120px;
   border-radius: 60px;
   overflow: hidden;
+  vertical-align: middle;
 }
 .hy-icon-large > img {
   position: absolute;
@@ -672,21 +691,60 @@ button.hy-form-button, .hy-form-text-button > button {
   left: -100%;
   right: -100%;
 }
+.hy-icon-large + span {
+  display: inline-block;
+  height: 120px;
+  line-height: 120px;
+  font-size: 24px;
+  margin-left: 8px;
+}
 
 .hy-icon-medium {
+  display: inline-block;
+  position: relative;
+  height: 88px;
+  width: 88px;
+  border-radius: 44px;
+  overflow: hidden;
+  vertical-align: middle;
+}
+.hy-icon-medium > img {
+  position: absolute;
+  height: 88px;
+  margin: auto;
+  left: -100%;
+  right: -100%;
+}
+.hy-icon-medium + span {
+  display: inline-block;
+  height: 88px;
+  line-height: 88px;
+  font-size: 24px;
+  margin-left: 8px;
+}
+
+.hy-icon-small {
   display: inline-block;
   position: relative;
   height: 40px;
   width: 40px;
   border-radius: 20px;
   overflow: hidden;
+  vertical-align: middle;
 }
-.hy-icon-medium > img {
+.hy-icon-small > img {
   position: absolute;
   height: 40px;
   margin: auto;
   left: -100%;
   right: -100%;
+}
+.hy-icon-small + span {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  font-size: 24px;
+  margin-left: 8px;
 }
 
 .hy-pagenate {
@@ -778,20 +836,33 @@ button.hy-form-button, .hy-form-text-button > button {
 }
 
 .hy-text-label {
-  display: inline-block;
+  display: block;
+  position: relative;
   margin-top: 16px;
+  padding-bottom: 8px;
 }
 .hy-text-label > label {
   position: absolute;
-  top: 8px;
+  top: -16px;
   font-size: 12px;
   font-family: "Noto Sans CJK JP Bold", sans-serif;
 }
 
 .hy-box {
   display: inline-block;
-  padding: 16px;
-  margin: 16px;
+  width: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.hy-box + .hy-box, .hy-box > .hy-box:first-child {
+  padding-top: 0px;
+  margin-top: 0px;
+}
+.hy-box > .hy-box:last-child {
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .hy-slider .slick-slide {
@@ -866,18 +937,21 @@ button.hy-form-button, .hy-form-text-button > button {
   background-color: rgba(0, 200, 200, 0.1);
 }
 
-.hy-read-more {
+button.hy-read-more,
+a.hy-read-more {
   text-decoration: none;
   color: #929292;
 }
-.hy-read-more::after {
+button.hy-read-more::after,
+a.hy-read-more::after {
   content: ">";
   position: relative;
   left: 8px;
   text-decoration: none;
   display: inline-block;
 }
-.hy-read-more.hy-form-button, .hy-form-text-button > button.hy-read-more {
+button.hy-read-more.hy-form-button, .hy-form-text-button > button.hy-read-more,
+a.hy-read-more.hy-form-button {
   -webkit-transition: all .3s;
   transition: all .3s;
   background-color: white;
@@ -886,19 +960,25 @@ button.hy-form-button, .hy-form-text-button > button {
   color: #929292;
   position: relative;
 }
-.hy-read-more.hy-form-button:hover, .hy-form-text-button > button.hy-read-more:hover {
+button.hy-read-more.hy-form-button:hover, .hy-form-text-button > button.hy-read-more:hover,
+a.hy-read-more.hy-form-button:hover {
   background-color: #929292;
   border-color: #929292;
   color: white;
 }
-.hy-read-more.hy-form-button:after, .hy-form-text-button > button.hy-read-more:after {
+button.hy-read-more.hy-form-button:after, .hy-form-text-button > button.hy-read-more:after,
+a.hy-read-more.hy-form-button:after {
   z-index: 1;
 }
 
 .hy-comment {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  display: block;
   position: relative;
   margin-bottom: 32px;
   min-height: 136px;
+  color: #252525;
 }
 .hy-comment:first-child {
   margin-top: 16px;
@@ -927,6 +1007,9 @@ button.hy-form-button, .hy-form-text-button > button {
 }
 .hy-comment:last-child > hr {
   display: none;
+}
+.hy-comment:hover {
+  transform: scale(1.05);
 }
 
 .hy-news {
@@ -1012,6 +1095,7 @@ button.hy-form-button, .hy-form-text-button > button {
   display: inline-block;
   margin-right: 8px;
   margin-left: 8px;
+  margin-bottom: 16px;
   border-radius: 16px;
   line-height: 16px;
   padding-left: 16px;
@@ -1019,7 +1103,7 @@ button.hy-form-button, .hy-form-text-button > button {
   padding-top: 8px;
   padding-bottom: 8px;
 }
-.hy-tag:after {
+.hy-tag.close:after {
   display: inline-block;
   content: "×";
   background-color: white;
@@ -1032,7 +1116,7 @@ button.hy-form-button, .hy-form-text-button > button {
   line-height: 20px;
   text-align: center;
 }
-.hy-tag:hover {
+.hy-tag.close:hover {
   transform: scale(1.05);
 }
 
@@ -1092,6 +1176,37 @@ button.hy-form-button, .hy-form-text-button > button {
 }
 .hy-center > * {
   display: inline-block;
+  text-align: initial;
+}
+
+.hy-half {
+  display: inline-block;
+  width: 50%;
+}
+.hy-half:first-child {
+  padding-right: 24px;
+  float: left;
+}
+.hy-half:last-child {
+  padding-left: 24px;
+  float: right;
+}
+
+.hy-third {
+  display: inline-block;
+  width: 33%;
+}
+.hy-third:nth-child(1) {
+  padding-right: 16px;
+  float: left;
+}
+.hy-third:nth-child(2) {
+  padding-right: 16px;
+  padding-left: 16px;
+}
+.hy-third:nth-child(3) {
+  padding-left: 16px;
+  float: right;
 }
 
 /*# sourceMappingURL=hy_template.css.map */

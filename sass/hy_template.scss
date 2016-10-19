@@ -368,8 +368,6 @@ p {
 	padding: {
 		top:$length-2;
 		bottom:$length-2;
-		left:$length-2;
-		right:$length-2;
 	}
 
 	& > * {
@@ -393,8 +391,6 @@ p {
 	padding: {
 		top:$length-5;
 		bottom:$length-5;
-		left:$length-2;
-		right:$length-2;
 	}
 
 	min-width: $length-128;
@@ -408,7 +404,7 @@ p {
 		left: 0;
 		right: 0;
 		color: $white;
-		
+
 		& > ul {
 			display: inline-table;
 			position: relative;
@@ -536,7 +532,8 @@ input.hy-validate{
 	}
 }
 
-.hy-form-button {
+button.hy-form-button,
+a.hy-form-button {
 	@include hy-form-button($darkGrey, $white);
 	&.main {
 		@include hy-form-button($highLight, $white);
@@ -706,23 +703,29 @@ button.hy-form-button{
 			& > .sub-title{
 				font-size: $length-1-5;
 			}
-		}
-		& > .status {
-			display: inline-block;
-			width: $length-5;
-			float: right;
-			text-align: center;
-			& > .star{
+			& > .status {
+				display: inline-block;
+				width: $length-5;
+				float: right;
+				text-align: center;
+				& > .star{
 
-			}
-			& > .star.on{
-				color: $highLight;
-			}
-			& > .number{
-				font-family: $headerFont;
-				font-size: $length-1-5;
+				}
+				& > .star.on{
+					color: $highLight;
+				}
+				& > .number{
+					font-family: $headerFont;
+					font-size: $length-1-5;
+				}
 			}
 		}
+	}
+}
+
+.status {
+	& > .star.on{
+		color: $highLight;
 	}
 }
 
@@ -747,6 +750,7 @@ button.hy-form-button{
 	width: $length-15;
 	border-radius: $length-15 / 2;
 	overflow: hidden;
+	vertical-align:middle;
 
 	& > img{
 		position: absolute;
@@ -755,15 +759,50 @@ button.hy-form-button{
 		left: -100%;
 		right: -100%;
 	}
+
+	& + span {
+		display: inline-block;
+		height: $length-15;
+		line-height: $length-15;
+		font-size: $length-3;
+		margin-left: $length-1;
+	}
 }
 
 .hy-icon-medium {
+	display: inline-block;
+	position: relative;
+	height: $length-11;
+	width: $length-11;
+	border-radius: $length-11 / 2 ;
+	overflow: hidden;
+	vertical-align:middle;
+
+	& > img{
+		position: absolute;
+		height: $length-11;
+		margin: auto;
+		left: -100%;
+		right: -100%;
+	}
+
+	& + span {
+		display: inline-block;
+		height: $length-11;
+		line-height: $length-11;
+		font-size: $length-3;
+		margin-left: $length-1;	
+	}
+}
+
+.hy-icon-small {
 	display: inline-block;
 	position: relative;
 	height: $length-5;
 	width: $length-5;
 	border-radius: $length-5 / 2 ;
 	overflow: hidden;
+	vertical-align:middle;
 
 	& > img{
 		position: absolute;
@@ -771,6 +810,14 @@ button.hy-form-button{
 		margin: auto;
 		left: -100%;
 		right: -100%;
+	}
+
+	& + span {
+		display: inline-block;
+		height: $length-5;
+		line-height: $length-5;
+		font-size: $length-3;
+		margin-left: $length-1;
 	}
 }
 
@@ -848,12 +895,14 @@ button.hy-form-button{
 }
 
 .hy-text-label{
-    display: inline-block;
+    display: block;
+    position: relative;
     margin-top: $length-2;
+    padding-bottom: $length-1;
 
     & > label{
 	    position: absolute;
-	    top: $length-1;
+	    top: -1 * $length-2;
 	    font-size: $length-2 - 4px;
 	    font-family: $headerFont;
     }
@@ -861,9 +910,35 @@ button.hy-form-button{
 
 .hy-box {
 	//@include boxshadow;
-	display:inline-block;
-	padding: $length-2;
-	margin: $length-2;
+	display: inline-block;
+	width: 100%;
+	padding:{
+		top: $length-2;
+		bottom: $length-2;
+	}
+	margin:{
+		top: $length-2;
+		bottom: $length-2;
+	}
+
+	& + .hy-box,
+	& > .hy-box:first-child {
+		padding:{
+			top: 0px;
+		}
+		margin:{
+			top: 0px;
+		}
+	}
+
+	& > .hy-box:last-child {
+		padding:{
+			bottom: 0px;
+		}
+		margin:{
+			bottom: 0px;
+		}
+	}
 }
 
 .hy-slider {
@@ -955,7 +1030,8 @@ button.hy-form-button{
 	}
 }
 
-.hy-read-more {
+button.hy-read-more,
+a.hy-read-more {
 	text-decoration:none;
 	color: $darkGrey;
 
@@ -977,9 +1053,14 @@ button.hy-form-button{
 }
 
 .hy-comment{
+	@include transition;
+
+	display:block;
 	position: relative;
 	margin-bottom: 32px;
 	min-height: $length-15 + $length-2;
+
+	color: $black;
 
 	&:first-child{
 		margin-top: 16px;
@@ -1020,6 +1101,10 @@ button.hy-form-button{
 
 	&:last-child > hr {
 		display:none;
+	}
+
+	&:hover{
+		transform: scale(1.05);
 	}
 }
 
@@ -1120,6 +1205,7 @@ button.hy-form-button{
     margin:{
     	right: $length-1;
     	left: $length-1;
+    	bottom: $length-2;
     }
     border-radius: $length-2;
     line-height: $length-2;
@@ -1130,7 +1216,7 @@ button.hy-form-button{
     	bottom: $length-1;
     }
 
-	&:after{
+	&.close:after{
 		display: inline-block;
 		content: "×";
 		background-color: white;
@@ -1144,7 +1230,7 @@ button.hy-form-button{
 		text-align: center;
 	}
 
-	&:hover{
+	&.close:hover{
 		transform: scale(1.05);
 	}
 }
@@ -1209,5 +1295,38 @@ button.hy-form-button{
 	text-align: center;
 	& > * {
 		display: inline-block;
+		text-align: initial;
 	}
 }
+
+.hy-half{
+	display: inline-block;
+	width: 50%;
+	
+	&:first-child{
+		padding-right: $length-3;
+		float: left;
+	}
+	&:last-child{
+		padding-left: $length-3;
+		float: right;	
+	}
+}
+
+.hy-third{
+	display: inline-block;
+	width: 33%;
+	&:nth-child(1){
+		padding-right: $length-2;
+		float: left;
+	}
+	&:nth-child(2){
+		padding-right: $length-2;
+		padding-left: $length-2;
+	}	
+	&:nth-child(3){
+		padding-left: $length-2;
+		float: right;	
+	}
+}
+
