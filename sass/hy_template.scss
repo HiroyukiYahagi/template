@@ -17,6 +17,7 @@ $white: rgba(255,255,255,1);
 
 $highLight: rgba(255,69,89,1);
 $oppositeLight: rgba(0,179,222,1);
+$successLight: rgba(89,222,69,1);
 
 $clear: rgba(0,0,0,0);
 
@@ -138,6 +139,13 @@ p {
 @mixin transition {
 	-webkit-transition: all .3s;
 	transition: all .3s;
+}
+
+@mixin hoverable {
+	&:hover {
+		z-index: 1;
+		transform: scale(1.05);
+	}
 }
 
 @mixin boxshadow {
@@ -299,11 +307,13 @@ p {
 			}
 
 			& > img {
-				position:absolute;
+				position:relative;
 				display:inline-block;
 				height: $length-7;
+				width: $length-7;
 				& + span {
-					margin-left: $length-7;
+					margin-left: $length-1;
+
 				}
 			}
 
@@ -514,6 +524,9 @@ input.hy-validate{
 	&.fail{
 		border: 1px solid $highLight;
 	}
+	&.success{
+		border: 1px solid $oppositeLight;
+	}
 	& + .hy-validate-message{
 		content: attr(data-validation-message);
 		display: none;
@@ -603,9 +616,32 @@ button.hy-form-button{
 	}
 }
 
+.hy-form-textarea-button{
+	@extend .hy-form-text;
+	min-width: 560px;
+	margin-bottom: $length-4;
+
+	& > textarea {
+		width: 100%;
+		min-height: 120px;
+	    margin-right: -4px;
+	    border-radius: $formRadius 0px 0px $formRadius;	
+	}
+
+	& > button {
+		@extend .hy-form-button;
+		position: absolute;
+		left: 0px;
+		right: 0px;
+		bottom: -1 * $length-4;
+		border-radius: 0px $formRadius $formRadius 0px;
+	}
+}
+
 .hy-hoverable-image{
 	@include transition;
 	@include newable;
+	@include hoverable;
 
 	position: relative;
     display: inline-block;
@@ -640,8 +676,7 @@ button.hy-form-button{
 	}
 
 	&:hover {
-		transform: scale(1.05);
-		z-index: 1;
+		
 		& > div{
 			background-color: $cover;
 			color: $white;
@@ -652,6 +687,7 @@ button.hy-form-button{
 .hy-card{
 	@include newable;
 	@include transition;
+	@include hoverable;
 
     display: inline-block;
     position: relative;
@@ -677,10 +713,6 @@ button.hy-form-button{
 		}
 	}
 
-	&:hover {
-		transform: scale(1.05);
-	}
-
 	& > .message{
 		color: $darkGrey;
 		padding: $length-1;
@@ -703,21 +735,22 @@ button.hy-form-button{
 			& > .sub-title{
 				font-size: $length-1-5;
 			}
-			& > .status {
-				display: inline-block;
-				width: $length-5;
-				float: right;
-				text-align: center;
-				& > .star{
+		}
 
-				}
-				& > .star.on{
-					color: $highLight;
-				}
-				& > .number{
-					font-family: $headerFont;
-					font-size: $length-1-5;
-				}
+		& > .status {
+			display: inline-block;
+			width: $length-5;
+			float: right;
+			text-align: center;
+			& > .star{
+
+			}
+			& > .star.on{
+				color: $highLight;
+			}
+			& > .number{
+				font-family: $headerFont;
+				font-size: $length-1-5;
 			}
 		}
 	}
@@ -943,12 +976,9 @@ button.hy-form-button{
 
 .hy-slider {
 	& .slick-slide {
+		@include hoverable;
 		@include transition;
 		margin: 0px 8px;
-
-		&:hover{
-			transform: scale(1.05);
-		}
 	}
 
 	& .slick-slide img {
@@ -999,6 +1029,8 @@ button.hy-form-button{
 
 
 .hy-flush {
+	@include boxshadow;
+
 	font-family: $font;
 	border:{
 		width: 1px;
@@ -1034,6 +1066,8 @@ button.hy-read-more,
 a.hy-read-more {
 	text-decoration:none;
 	color: $darkGrey;
+	float: right;
+	margin-right: $length-2;
 
 	&::after{
 		content: ">";
@@ -1046,6 +1080,11 @@ a.hy-read-more {
 	&.hy-form-button{
 		@include hy-form-button-inverse($darkGrey, $white);
 		position:relative;
+		padding:{
+			left: $length-2;
+			right: $length-3;
+		}
+		float: inherit;
 		&:after{
 			z-index: 1;
 		}
@@ -1054,6 +1093,7 @@ a.hy-read-more {
 
 .hy-comment{
 	@include transition;
+	@include hoverable;
 
 	display:block;
 	position: relative;
@@ -1101,10 +1141,6 @@ a.hy-read-more {
 
 	&:last-child > hr {
 		display:none;
-	}
-
-	&:hover{
-		transform: scale(1.05);
 	}
 }
 
@@ -1174,6 +1210,8 @@ a.hy-read-more {
 .hy-sub-image {
 	//@include boxshadow;
 	@include transition;
+	@include hoverable;
+
 	position:relative;
 	width: $length-13;
 	height: $length-13;
@@ -1182,7 +1220,7 @@ a.hy-read-more {
 
 	margin:{
 		right: $length-1;
-		top: $length-1;
+		bottom: $length-1;
 	}
 
 	& > img {
@@ -1192,20 +1230,18 @@ a.hy-read-more {
 		left: -100%;
 		right: -100%;
 	}
-
-	&:hover {
-		transform: scale(1.05);
-	}
 }
 
 .hy-tag{
 	@include transition;
-
 	display: inline-block;
+
+	text-decoration: none;
+
     margin:{
     	right: $length-1;
-    	left: $length-1;
-    	bottom: $length-2;
+    	// left: $length-1;
+    	bottom: $length-1;
     }
     border-radius: $length-2;
     line-height: $length-2;
@@ -1230,8 +1266,8 @@ a.hy-read-more {
 		text-align: center;
 	}
 
-	&.close:hover{
-		transform: scale(1.05);
+	&.close{
+		@include hoverable;
 	}
 }
 
@@ -1292,41 +1328,64 @@ a.hy-read-more {
 }
 
 .hy-center {
+	display: block;
 	text-align: center;
+	text-decoration: none;
+
 	& > * {
 		display: inline-block;
 		text-align: initial;
 	}
 }
 
+.hy-full{
+	display: inline-block;
+	width: 100%;
+}
+
 .hy-half{
 	display: inline-block;
-	width: 50%;
-	
+	width: calc(50% - #{$length-2});
+	margin-bottom: $length-2;
+
 	&:first-child{
-		padding-right: $length-3;
+		padding-right: $length-2;
 		float: left;
 	}
 	&:last-child{
-		padding-left: $length-3;
+		padding-left: $length-2;
 		float: right;	
 	}
 }
 
 .hy-third{
 	display: inline-block;
-	width: 33%;
+	width: 33.3%;
+	margin-bottom: $length-2;
+
 	&:nth-child(1){
-		padding-right: $length-2;
+		padding-right: ( $length-2 * 2 )/3;
 		float: left;
 	}
 	&:nth-child(2){
-		padding-right: $length-2;
-		padding-left: $length-2;
+		padding-right: $length-2 / 3;
+		padding-left: $length-2 / 3;
 	}	
 	&:nth-child(3){
-		padding-left: $length-2;
+		padding-left: ( $length-2 * 2 )/3;
 		float: right;	
+	}
+
+	& + .hy-other{
+		display: inline-block;
+		width: 66.6%;
+		margin-bottom: $length-2;
+		padding-left: ( $length-2 * 2 )/3;
+		float: right;
 	}
 }
 
+.hy-hoverable {
+	@include transition;
+	@include hoverable;
+}

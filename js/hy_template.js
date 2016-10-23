@@ -42,17 +42,35 @@ var initTemplate = function (){
 	// form validation
 	//
 	$(".hy-validate").blur(function(event) {
+
+		if($(this).hasClass('required')){
+			if($(this).val().length == 0){
+				var targetId = $(this).data('validate-result');
+    			$('#' + targetId).text($(this).data('validate-fail'));
+	    		$(this).removeClass('success');
+	        	$(this).addClass('fail');
+			}else{
+				var targetId = $(this).data('validate-result');
+	    			$('#' + targetId).text($(this).data('validate-success'));
+		        	$(this).removeClass('fail');
+		        	$(this).addClass('success');
+			}
+		}
+
+		if($(this).data("validate-url") == null || $(this).data("validate-url").length == 0){
+			return;
+		}
+
 		$.ajax({
 		    url: $(this).data("validate-url"),
-		    type: 'POST',
+		    method: "POST",
 		    data: {
-		    	"data": $(this).val(), 
+		    	name : $(this).attr('name'), 
+		    	data : $(this).val()
 		    },
-		    processData: false,
-		    contentType: false,
 		    context: this,
-		    success: function(data, status, jqXHR) {
-		    	if(data.result){
+		    success: function(result, status, jqXHR) {
+		    	if(result == 1){
 		        	var targetId = $(this).data('validate-result');
 	    			$('#' + targetId).text($(this).data('validate-success'));
 		        	$(this).removeClass('fail');
@@ -72,6 +90,7 @@ var initTemplate = function (){
 	    	},
 		});
 	});
+	$(".hy-validate").trigger('blur');
 
 	//
 	// ajax form
@@ -122,7 +141,7 @@ var initTemplate = function (){
 	//favorite
 	//
 	$(".status").each(function(index, el) {
-		$(this).find('.star').click(function(event) {
+		$(this).find('.star:not(.disable)').click(function(event) {
 			var on = $(this).hasClass('on')
 			var toUrl = $(this).data('url');
 			if(on){

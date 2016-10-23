@@ -234,12 +234,13 @@ p {
   border-bottom: 8px solid #ff4559;
 }
 .hy-top-menu > .right-menu > a > img {
-  position: absolute;
+  position: relative;
   display: inline-block;
   height: 56px;
+  width: 56px;
 }
 .hy-top-menu > .right-menu > a > img + span {
-  margin-left: 56px;
+  margin-left: 8px;
 }
 .hy-top-menu > .right-menu > a > span {
   position: relative;
@@ -349,11 +350,11 @@ p {
   font-size: 32px;
 }
 
-.hy-form-text, .hy-form-text-label, .hy-form-text-button {
+.hy-form-text, .hy-form-text-label, .hy-form-text-button, .hy-form-textarea-button {
   position: relative;
   display: inline-block;
 }
-.hy-form-text > input[type="text"], .hy-form-text-label > input[type="text"], .hy-form-text-button > input[type="text"], .hy-form-text > input[type="email"], .hy-form-text-label > input[type="email"], .hy-form-text-button > input[type="email"], .hy-form-text > input[type="password"], .hy-form-text-label > input[type="password"], .hy-form-text-button > input[type="password"], .hy-form-text > input[type="number"], .hy-form-text-label > input[type="number"], .hy-form-text-button > input[type="number"], .hy-form-text > input[type="date"], .hy-form-text-label > input[type="date"], .hy-form-text-button > input[type="date"], .hy-form-text > textarea, .hy-form-text-label > textarea, .hy-form-text-button > textarea {
+.hy-form-text > input[type="text"], .hy-form-text-label > input[type="text"], .hy-form-text-button > input[type="text"], .hy-form-textarea-button > input[type="text"], .hy-form-text > input[type="email"], .hy-form-text-label > input[type="email"], .hy-form-text-button > input[type="email"], .hy-form-textarea-button > input[type="email"], .hy-form-text > input[type="password"], .hy-form-text-label > input[type="password"], .hy-form-text-button > input[type="password"], .hy-form-textarea-button > input[type="password"], .hy-form-text > input[type="number"], .hy-form-text-label > input[type="number"], .hy-form-text-button > input[type="number"], .hy-form-textarea-button > input[type="number"], .hy-form-text > input[type="date"], .hy-form-text-label > input[type="date"], .hy-form-text-button > input[type="date"], .hy-form-textarea-button > input[type="date"], .hy-form-text > textarea, .hy-form-text-label > textarea, .hy-form-text-button > textarea, .hy-form-textarea-button > textarea {
   min-width: 400px;
   min-height: 40px;
   border: 1px #929292;
@@ -366,10 +367,10 @@ p {
   box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
   outline: none;
 }
-.hy-form-text > input[type="text"]:focus, .hy-form-text-label > input[type="text"]:focus, .hy-form-text-button > input[type="text"]:focus, .hy-form-text > input[type="email"]:focus, .hy-form-text-label > input[type="email"]:focus, .hy-form-text-button > input[type="email"]:focus, .hy-form-text > input[type="password"]:focus, .hy-form-text-label > input[type="password"]:focus, .hy-form-text-button > input[type="password"]:focus, .hy-form-text > input[type="number"]:focus, .hy-form-text-label > input[type="number"]:focus, .hy-form-text-button > input[type="number"]:focus, .hy-form-text > input[type="date"]:focus, .hy-form-text-label > input[type="date"]:focus, .hy-form-text-button > input[type="date"]:focus, .hy-form-text > textarea:focus, .hy-form-text-label > textarea:focus, .hy-form-text-button > textarea:focus {
+.hy-form-text > input[type="text"]:focus, .hy-form-text-label > input[type="text"]:focus, .hy-form-text-button > input[type="text"]:focus, .hy-form-textarea-button > input[type="text"]:focus, .hy-form-text > input[type="email"]:focus, .hy-form-text-label > input[type="email"]:focus, .hy-form-text-button > input[type="email"]:focus, .hy-form-textarea-button > input[type="email"]:focus, .hy-form-text > input[type="password"]:focus, .hy-form-text-label > input[type="password"]:focus, .hy-form-text-button > input[type="password"]:focus, .hy-form-textarea-button > input[type="password"]:focus, .hy-form-text > input[type="number"]:focus, .hy-form-text-label > input[type="number"]:focus, .hy-form-text-button > input[type="number"]:focus, .hy-form-textarea-button > input[type="number"]:focus, .hy-form-text > input[type="date"]:focus, .hy-form-text-label > input[type="date"]:focus, .hy-form-text-button > input[type="date"]:focus, .hy-form-textarea-button > input[type="date"]:focus, .hy-form-text > textarea:focus, .hy-form-text-label > textarea:focus, .hy-form-text-button > textarea:focus, .hy-form-textarea-button > textarea:focus {
   border: solid 1px #00b3de;
 }
-.hy-form-text > input[type="date"], .hy-form-text-label > input[type="date"], .hy-form-text-button > input[type="date"] {
+.hy-form-text > input[type="date"], .hy-form-text-label > input[type="date"], .hy-form-text-button > input[type="date"], .hy-form-textarea-button > input[type="date"] {
   min-width: 88px;
 }
 
@@ -393,6 +394,10 @@ textarea.hy-validate.fail,
 input.hy-validate.fail {
   border: 1px solid #ff4559;
 }
+textarea.hy-validate.success,
+input.hy-validate.success {
+  border: 1px solid #00b3de;
+}
 textarea.hy-validate + .hy-validate-message,
 input.hy-validate + .hy-validate-message {
   content: attr(data-validation-message);
@@ -413,7 +418,7 @@ input.hy-validate.fail + .hy-validate-message {
   display: inline-block;
 }
 
-button.hy-form-button, .hy-form-text-button > button,
+button.hy-form-button, .hy-form-text-button > button, .hy-form-textarea-button > button,
 a.hy-form-button {
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -431,20 +436,20 @@ a.hy-form-button {
   line-height: 40px;
   font-size: 16px;
 }
-button.hy-form-button:hover, .hy-form-text-button > button:hover, button.hy-form-button.inactive, .hy-form-text-button > button.inactive,
+button.hy-form-button:hover, .hy-form-text-button > button:hover, .hy-form-textarea-button > button:hover, button.hy-form-button.inactive, .hy-form-text-button > button.inactive, .hy-form-textarea-button > button.inactive,
 a.hy-form-button:hover,
 a.hy-form-button.inactive {
   background-color: white;
   border-color: #929292;
   color: #929292;
 }
-button.hy-form-button.inactive:hover, .hy-form-text-button > button.inactive:hover,
+button.hy-form-button.inactive:hover, .hy-form-text-button > button.inactive:hover, .hy-form-textarea-button > button.inactive:hover,
 a.hy-form-button.inactive:hover {
   background-color: #929292;
   border: 1px solid #929292;
   color: white;
 }
-button.hy-form-button.main, .hy-form-text-button > button.main,
+button.hy-form-button.main, .hy-form-text-button > button.main, .hy-form-textarea-button > button.main,
 a.hy-form-button.main {
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -453,20 +458,20 @@ a.hy-form-button.main {
   border-radius: 2px;
   color: white;
 }
-button.hy-form-button.main:hover, .hy-form-text-button > button.main:hover, button.hy-form-button.main.inactive, .hy-form-text-button > button.main.inactive,
+button.hy-form-button.main:hover, .hy-form-text-button > button.main:hover, .hy-form-textarea-button > button.main:hover, button.hy-form-button.main.inactive, .hy-form-text-button > button.main.inactive, .hy-form-textarea-button > button.main.inactive,
 a.hy-form-button.main:hover,
 a.hy-form-button.main.inactive {
   background-color: white;
   border-color: #ff4559;
   color: #ff4559;
 }
-button.hy-form-button.main.inactive:hover, .hy-form-text-button > button.main.inactive:hover,
+button.hy-form-button.main.inactive:hover, .hy-form-text-button > button.main.inactive:hover, .hy-form-textarea-button > button.main.inactive:hover,
 a.hy-form-button.main.inactive:hover {
   background-color: #ff4559;
   border: 1px solid #ff4559;
   color: white;
 }
-button.hy-form-button.sub, .hy-form-text-button > button.sub,
+button.hy-form-button.sub, .hy-form-text-button > button.sub, .hy-form-textarea-button > button.sub,
 a.hy-form-button.sub {
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -475,20 +480,20 @@ a.hy-form-button.sub {
   border-radius: 2px;
   color: white;
 }
-button.hy-form-button.sub:hover, .hy-form-text-button > button.sub:hover, button.hy-form-button.sub.inactive, .hy-form-text-button > button.sub.inactive,
+button.hy-form-button.sub:hover, .hy-form-text-button > button.sub:hover, .hy-form-textarea-button > button.sub:hover, button.hy-form-button.sub.inactive, .hy-form-text-button > button.sub.inactive, .hy-form-textarea-button > button.sub.inactive,
 a.hy-form-button.sub:hover,
 a.hy-form-button.sub.inactive {
   background-color: white;
   border-color: #00b3de;
   color: #00b3de;
 }
-button.hy-form-button.sub.inactive:hover, .hy-form-text-button > button.sub.inactive:hover,
+button.hy-form-button.sub.inactive:hover, .hy-form-text-button > button.sub.inactive:hover, .hy-form-textarea-button > button.sub.inactive:hover,
 a.hy-form-button.sub.inactive:hover {
   background-color: #00b3de;
   border: 1px solid #00b3de;
   color: white;
 }
-button.hy-form-button::before, .hy-form-text-button > button::before, button.hy-form-button::after, .hy-form-text-button > button::after,
+button.hy-form-button::before, .hy-form-text-button > button::before, .hy-form-textarea-button > button::before, button.hy-form-button::after, .hy-form-text-button > button::after, .hy-form-textarea-button > button::after,
 a.hy-form-button::before,
 a.hy-form-button::after {
   position: absolute;
@@ -496,7 +501,7 @@ a.hy-form-button::after {
   display: block;
   content: '';
 }
-button.hy-form-button, .hy-form-text-button > button, button.hy-form-button::before, .hy-form-text-button > button::before, button.hy-form-button::after, .hy-form-text-button > button::after,
+button.hy-form-button, .hy-form-text-button > button, .hy-form-textarea-button > button, button.hy-form-button::before, .hy-form-text-button > button::before, .hy-form-textarea-button > button::before, button.hy-form-button::after, .hy-form-text-button > button::after, .hy-form-textarea-button > button::after,
 a.hy-form-button,
 a.hy-form-button::before,
 a.hy-form-button::after {
@@ -506,7 +511,7 @@ a.hy-form-button::after {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
-button.hy-form-button > span, .hy-form-text-button > button > span,
+button.hy-form-button > span, .hy-form-text-button > button > span, .hy-form-textarea-button > button > span,
 a.hy-form-button > span {
   display: block;
   position: relative;
@@ -517,7 +522,7 @@ a.hy-form-button > span {
   margin-top: -8px;
 }
 
-button.hy-form-button, .hy-form-text-button > button {
+button.hy-form-button, .hy-form-text-button > button, .hy-form-textarea-button > button {
   padding: 0;
 }
 
@@ -530,6 +535,24 @@ button.hy-form-button, .hy-form-text-button > button {
   padding-left: 8px;
   padding-right: 8px;
   margin: 0px;
+  border-radius: 0px 2px 2px 0px;
+}
+
+.hy-form-textarea-button {
+  min-width: 560px;
+  margin-bottom: 32px;
+}
+.hy-form-textarea-button > textarea {
+  width: 100%;
+  min-height: 120px;
+  margin-right: -4px;
+  border-radius: 2px 0px 0px 2px;
+}
+.hy-form-textarea-button > button {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: -32px;
   border-radius: 0px 2px 2px 0px;
 }
 
@@ -551,6 +574,10 @@ button.hy-form-button, .hy-form-text-button > button {
   padding-left: 8px;
   height: 24px;
   line-height: 24px;
+}
+.hy-hoverable-image:hover {
+  z-index: 1;
+  transform: scale(1.05);
 }
 .hy-hoverable-image > div {
   -webkit-transition: all .3s;
@@ -575,10 +602,6 @@ button.hy-form-button, .hy-form-text-button > button {
   position: absolute;
   bottom: 8px;
   left: 8px;
-}
-.hy-hoverable-image:hover {
-  transform: scale(1.05);
-  z-index: 1;
 }
 .hy-hoverable-image:hover > div {
   background-color: rgba(0, 0, 0, 0.5);
@@ -607,6 +630,10 @@ button.hy-form-button, .hy-form-text-button > button {
   height: 24px;
   line-height: 24px;
 }
+.hy-card:hover {
+  z-index: 1;
+  transform: scale(1.05);
+}
 .hy-card > span {
   position: relative;
   display: inline-block;
@@ -621,9 +648,6 @@ button.hy-form-button, .hy-form-text-button > button {
   margin: auto;
   width: auto;
   height: 256px;
-}
-.hy-card:hover {
-  transform: scale(1.05);
 }
 .hy-card > .message {
   color: #929292;
@@ -645,16 +669,16 @@ button.hy-form-button, .hy-form-text-button > button {
 .hy-card > .message > .titles > .sub-title {
   font-size: 12px;
 }
-.hy-card > .message > .titles > .status {
+.hy-card > .message > .status {
   display: inline-block;
   width: 40px;
   float: right;
   text-align: center;
 }
-.hy-card > .message > .titles > .status > .star.on {
+.hy-card > .message > .status > .star.on {
   color: #ff4559;
 }
-.hy-card > .message > .titles > .status > .number {
+.hy-card > .message > .status > .number {
   font-family: "Noto Sans CJK JP Bold", sans-serif;
   font-size: 12px;
 }
@@ -871,6 +895,7 @@ button.hy-form-button, .hy-form-text-button > button {
   margin: 0px 8px;
 }
 .hy-slider .slick-slide:hover {
+  z-index: 1;
   transform: scale(1.05);
 }
 .hy-slider .slick-slide img {
@@ -913,6 +938,7 @@ button.hy-form-button, .hy-form-text-button > button {
 }
 
 .hy-flush {
+  box-shadow: 9px 9px 10px -5px #f2f2f2;
   font-family: "Noto Sans CJK JP", sans-serif;
   border-width: 1px;
   border-style: solid;
@@ -941,6 +967,8 @@ button.hy-read-more,
 a.hy-read-more {
   text-decoration: none;
   color: #929292;
+  float: right;
+  margin-right: 16px;
 }
 button.hy-read-more::after,
 a.hy-read-more::after {
@@ -950,7 +978,7 @@ a.hy-read-more::after {
   text-decoration: none;
   display: inline-block;
 }
-button.hy-read-more.hy-form-button, .hy-form-text-button > button.hy-read-more,
+button.hy-read-more.hy-form-button, .hy-form-text-button > button.hy-read-more, .hy-form-textarea-button > button.hy-read-more,
 a.hy-read-more.hy-form-button {
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -959,14 +987,17 @@ a.hy-read-more.hy-form-button {
   border-radius: 2px;
   color: #929292;
   position: relative;
+  padding-left: 16px;
+  padding-right: 24px;
+  float: inherit;
 }
-button.hy-read-more.hy-form-button:hover, .hy-form-text-button > button.hy-read-more:hover,
+button.hy-read-more.hy-form-button:hover, .hy-form-text-button > button.hy-read-more:hover, .hy-form-textarea-button > button.hy-read-more:hover,
 a.hy-read-more.hy-form-button:hover {
   background-color: #929292;
   border-color: #929292;
   color: white;
 }
-button.hy-read-more.hy-form-button:after, .hy-form-text-button > button.hy-read-more:after,
+button.hy-read-more.hy-form-button:after, .hy-form-text-button > button.hy-read-more:after, .hy-form-textarea-button > button.hy-read-more:after,
 a.hy-read-more.hy-form-button:after {
   z-index: 1;
 }
@@ -979,6 +1010,10 @@ a.hy-read-more.hy-form-button:after {
   margin-bottom: 32px;
   min-height: 136px;
   color: #252525;
+}
+.hy-comment:hover {
+  z-index: 1;
+  transform: scale(1.05);
 }
 .hy-comment:first-child {
   margin-top: 16px;
@@ -1007,9 +1042,6 @@ a.hy-read-more.hy-form-button:after {
 }
 .hy-comment:last-child > hr {
   display: none;
-}
-.hy-comment:hover {
-  transform: scale(1.05);
 }
 
 .hy-news {
@@ -1076,7 +1108,11 @@ a.hy-read-more.hy-form-button:after {
   display: inline-block;
   overflow: hidden;
   margin-right: 8px;
-  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.hy-sub-image:hover {
+  z-index: 1;
+  transform: scale(1.05);
 }
 .hy-sub-image > img {
   position: absolute;
@@ -1085,17 +1121,14 @@ a.hy-read-more.hy-form-button:after {
   left: -100%;
   right: -100%;
 }
-.hy-sub-image:hover {
-  transform: scale(1.05);
-}
 
 .hy-tag {
   -webkit-transition: all .3s;
   transition: all .3s;
   display: inline-block;
+  text-decoration: none;
   margin-right: 8px;
-  margin-left: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
   border-radius: 16px;
   line-height: 16px;
   padding-left: 16px;
@@ -1117,6 +1150,7 @@ a.hy-read-more.hy-form-button:after {
   text-align: center;
 }
 .hy-tag.close:hover {
+  z-index: 1;
   transform: scale(1.05);
 }
 
@@ -1172,41 +1206,66 @@ a.hy-read-more.hy-form-button:after {
 }
 
 .hy-center {
+  display: block;
   text-align: center;
+  text-decoration: none;
 }
 .hy-center > * {
   display: inline-block;
   text-align: initial;
 }
 
+.hy-full {
+  display: inline-block;
+  width: 100%;
+}
+
 .hy-half {
   display: inline-block;
-  width: 50%;
+  width: calc(50% - 16px);
+  margin-bottom: 16px;
 }
 .hy-half:first-child {
-  padding-right: 24px;
+  padding-right: 16px;
   float: left;
 }
 .hy-half:last-child {
-  padding-left: 24px;
+  padding-left: 16px;
   float: right;
 }
 
 .hy-third {
   display: inline-block;
-  width: 33%;
+  width: 33.3%;
+  margin-bottom: 16px;
 }
 .hy-third:nth-child(1) {
-  padding-right: 16px;
+  padding-right: 10.66667px;
   float: left;
 }
 .hy-third:nth-child(2) {
-  padding-right: 16px;
-  padding-left: 16px;
+  padding-right: 5.33333px;
+  padding-left: 5.33333px;
 }
 .hy-third:nth-child(3) {
-  padding-left: 16px;
+  padding-left: 10.66667px;
   float: right;
+}
+.hy-third + .hy-other {
+  display: inline-block;
+  width: 66.6%;
+  margin-bottom: 16px;
+  padding-left: 10.66667px;
+  float: right;
+}
+
+.hy-hoverable {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+.hy-hoverable:hover {
+  z-index: 1;
+  transform: scale(1.05);
 }
 
 /*# sourceMappingURL=hy_template.css.map */
