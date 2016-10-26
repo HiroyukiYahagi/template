@@ -8,11 +8,16 @@ var uploadFiles = function(node, file) {
 	    data: fd,
 	    processData: false,
 	    contentType: false,
+	    dataType: "json",
 	    success: function(data, status, jqXHR) {
 	        //画像を設定
-	        $(node).children('img').attr('src', data);
+	        $img = $(node).find('img');
+	        $img.attr('src', data.url);
+	        $img.show(300);
+	        $(node).children('input').val(data.filename);
+
 	        //閉じるボタンを有効化
-	        $(node).children('.close').css('display', 'block');
+	        $(node).find('.close').css('display', 'block');
 	        //コンポーネントを追加
 	        if(!$(node).hasClass('one')){
 	        	$(node).clone(true).insertAfter(node).children('.close').css('display', 'none');	
@@ -43,22 +48,21 @@ var initTemplate = function (){
 	// form validation
 	//
 	$(".hy-validate").blur(function(event) {
-
-		if($(this).hasClass('required')){
-			if($(this).val().length == 0){
-				var targetId = $(this).data('validate-result');
-    			$('#' + targetId).text($(this).data('validate-fail'));
-	    		$(this).removeClass('success');
-	        	$(this).addClass('fail');
-			}else{
-				var targetId = $(this).data('validate-result');
-	    			$('#' + targetId).text($(this).data('validate-success'));
-		        	$(this).removeClass('fail');
-		        	$(this).addClass('success');
-			}
-		}
-
+		
 		if($(this).data("validate-url") == null || $(this).data("validate-url").length == 0){
+			if($(this).hasClass('required')){
+				if($(this).val().length == 0){
+					var targetId = $(this).data('validate-result');
+	    			$('#' + targetId).text($(this).data('validate-fail'));
+		    		$(this).removeClass('success');
+		        	$(this).addClass('fail');
+				}else{
+					var targetId = $(this).data('validate-result');
+		    			$('#' + targetId).text($(this).data('validate-success'));
+			        	$(this).removeClass('fail');
+			        	$(this).addClass('success');
+				}
+			}
 			return;
 		}
 
@@ -70,15 +74,16 @@ var initTemplate = function (){
 		    	data : $(this).val()
 		    },
 		    context: this,
-		    success: function(result, status, jqXHR) {
-		    	if(result == 1){
+		    dataType: "json",
+		    success: function(data, status, jqXHR) {
+		    	if(data.result){
 		        	var targetId = $(this).data('validate-result');
-	    			$('#' + targetId).text($(this).data('validate-success'));
+		        	$('#' + targetId).text(data.msg);
 		        	$(this).removeClass('fail');
 		        	$(this).addClass('success');
 		    	}else{
 		    		var targetId = $(this).data('validate-result');
-	    			$('#' + targetId).text($(this).data('validate-fail'));
+	    			$('#' + targetId).text(data.msg);
 		    		$(this).removeClass('success');
 		        	$(this).addClass('fail');
 		    	}
@@ -121,7 +126,7 @@ var initTemplate = function (){
 	//
     $('.hy-form-file').bind('drop', function(event){
         event.preventDefault();
-        $(this).children('img').attr("src", "");
+        $(this).find('img').hide(300);
         var file = event.originalEvent.dataTransfer.files[0];
         if (!/^image\/(png|jpeg|gif)$/.test(file.type)) {
             alert('画像ファイル以外は利用できません');
@@ -135,13 +140,18 @@ var initTemplate = function (){
     });
     $('.hy-form-file > .close').click(function(event) {
     	if($(this).parent().hasClass('one')){
-    		$(this).parent().children('img').attr("src", "");	
+    		$img = $(this).parent().find('img');
+    		$img.hide(300);
+    		$(this).hide(300);
+    		$img.removeAttr('src');
+    		$(this).parent().children('input').val('');
     	}else{
-    		$(this).parent().remove();	
+    		$(this).parent().hide(300);
+    		$(this).parent().remove();
     	}
     });
     $('.hy-form-file').each(function(){
-    	var src = $(this).children("img").attr("src");
+    	var src = $(this).find("img").attr("src");
     	if(src.length >= 1){
     		$(this).children('.close').css('display', 'block');
     	}
