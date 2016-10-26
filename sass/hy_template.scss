@@ -1254,7 +1254,7 @@ a.hy-read-more {
 
 	&.close:after{
 		display: inline-block;
-		content: "×";
+		content: "x";
 		background-color: white;
 		color: $darkGrey;
 		border-radius: #{($length-3 - 4px)/2};
@@ -1286,20 +1286,12 @@ a.hy-read-more {
 	& > img {
 		z-index: 3;
 		position: absolute;
-		weight: 100%;
-		height: 100%;
-	}
-
-	& > img {
-		z-index: 5;
-		position: absolute;
-		background-color: $darkGrey;
-		weight: 100%;
+		width: 100%;
 		height: 100%;
 	}
 
 	&:before {
-		content: "ファイルをドロップしてください";
+		content: "Drop your file";
 		z-index: 1;
 		position: absolute;
 		display: block;

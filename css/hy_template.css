@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: 'Noto Sans CJK JP';
   src: url(./fonts/NotoSansCJKjp-Thin.otf);
@@ -1138,7 +1137,7 @@ a.hy-read-more.hy-form-button:after {
 }
 .hy-tag.close:after {
   display: inline-block;
-  content: "×";
+  content: "x";
   background-color: white;
   color: #929292;
   border-radius: 10px;
@@ -1168,18 +1167,11 @@ a.hy-read-more.hy-form-button:after {
 .hy-form-file > img {
   z-index: 3;
   position: absolute;
-  weight: 100%;
-  height: 100%;
-}
-.hy-form-file > img {
-  z-index: 5;
-  position: absolute;
-  background-color: #929292;
-  weight: 100%;
+  width: 100%;
   height: 100%;
 }
 .hy-form-file:before {
-  content: "ファイルをドロップしてください";
+  content: "Drop your file";
   z-index: 1;
   position: absolute;
   display: block;

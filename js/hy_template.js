@@ -9,13 +9,14 @@ var uploadFiles = function(node, file) {
 	    processData: false,
 	    contentType: false,
 	    success: function(data, status, jqXHR) {
-	        console.log(data);
 	        //画像を設定
 	        $(node).children('img').attr('src', data);
 	        //閉じるボタンを有効化
 	        $(node).children('.close').css('display', 'block');
 	        //コンポーネントを追加
-	        $(node).clone(true).insertAfter(node).children('.close').css('display', 'none');
+	        if(!$(node).hasClass('one')){
+	        	$(node).clone(true).insertAfter(node).children('.close').css('display', 'none');	
+	        }
 	    },
 	    error: function(jqXHR, textStatus, errorThrown){
 	    	alert(errorThrown);
@@ -120,7 +121,7 @@ var initTemplate = function (){
 	//
     $('.hy-form-file').bind('drop', function(event){
         event.preventDefault();
-        $(this).children('.img-base').remove();
+        $(this).children('img').attr("src", "");
         var file = event.originalEvent.dataTransfer.files[0];
         if (!/^image\/(png|jpeg|gif)$/.test(file.type)) {
             alert('画像ファイル以外は利用できません');
@@ -133,7 +134,17 @@ var initTemplate = function (){
         return false;
     });
     $('.hy-form-file > .close').click(function(event) {
-        $(this).parent().remove();
+    	if($(this).parent().hasClass('one')){
+    		$(this).parent().children('img').attr("src", "");	
+    	}else{
+    		$(this).parent().remove();	
+    	}
+    });
+    $('.hy-form-file').each(function(){
+    	var src = $(this).children("img").attr("src");
+    	if(src.length >= 1){
+    		$(this).children('.close').css('display', 'block');
+    	}
     });
 
 
