@@ -375,6 +375,7 @@ p {
 
 .hy-form-text-label {
   margin-top: 24px;
+  margin-bottom: 8px;
 }
 .hy-form-text-label > label {
   display: block;
