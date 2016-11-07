@@ -311,9 +311,9 @@ p {
 				display:inline-block;
 				height: $length-7;
 				width: $length-7;
+				border-radius: 50%;
 				& + span {
 					margin-left: $length-1;
-
 				}
 			}
 
@@ -429,7 +429,7 @@ p {
 				text-decoration: none;
 				font-size: $length-2;
 				padding: {
-					left: $length-1;
+					//left: $length-1;
 					right: $length-1;
 				}
 				
@@ -471,6 +471,8 @@ p {
 	& > input[type="password"],
 	& > input[type="number"],
 	& > input[type="date"],
+	& > select,
+	& > span.select2 > span > span,
 	& > textarea{
 	    min-width: $length-50;
 	    min-height: $length-5;
@@ -876,6 +878,11 @@ button.hy-form-button{
 			right: $length-1;
 		}
 
+		&.disable:hover{
+			color: $darkGrey;
+			background-color:rgba(0,0,0,0);
+		}
+
 		&.prev:before{
 			content:"<";
 			margin-right: $length-1;
@@ -887,11 +894,11 @@ button.hy-form-button{
 		}
 	}
 
-	& > .jump:nth-child(4){
+	& > .jump.now{
 		@include hy-form-button($darkGrey, $white);
 		border-color: rgba(0,0,0,0);
 	}
-	& > .jump:nth-child(4):hover{
+	& > .jump.now:hover{
 		background-color: rgba(0,0,0,0);
 		border-color: rgba(0,0,0,0);
 	}
@@ -1233,6 +1240,41 @@ a.hy-read-more {
 	}
 }
 
+.hy-small-slider{
+	@include transition;
+	@include hoverable;
+
+	position:relative;
+	width: $length-15;
+	height: $length-13;
+	display: inline-block;
+	overflow: hidden;
+
+	margin:{
+		right: $length-1;
+		bottom: $length-1;
+	}
+	& .hy-imagewrapper{
+		height: $length-13;
+		width: $length-15;
+	}
+}
+
+.hy-imagewrapper{
+	position: absolute;
+	overflow: hidden;
+	//height: $length-13;
+	//width: $length-13;
+	& > img {
+		position:absolute;
+		margin: auto;
+		height: 100%;
+		width: auto !important;
+		left: -100%;
+		right: -100%;
+	}
+}
+
 .hy-tag{
 	@include transition;
 	display: inline-block;
@@ -1295,8 +1337,14 @@ a.hy-read-more {
 		height: $length-24;
 		border: 5px dotted $darkGrey;
 
+		margin: {
+			right: $length-2;
+			bottom: $length-2;
+		}
+
 		& > span{
 		 	display: inline-block;
+		 	position: absolute;
 		 	width: 100%;
 			height: 100%;
 		 	overflow: hidden;
@@ -1304,12 +1352,12 @@ a.hy-read-more {
 
 		 	& > img {
 				position: absolute;
-				height: 100%;
-				width: auto;
-				left: -100%;
-				right: -100%;
-				margin: auto;
-				z-index: 2;
+				height: 100% !important;
+				width: auto !important;
+				left: -100% !important;
+				right: -100% !important;
+				margin: auto !important;
+				z-index: 2 !important;
 			}
 		}
 
@@ -1362,6 +1410,7 @@ a.hy-read-more {
 
 .hy-half{
 	display: inline-block;
+	vertical-align: top;
 	width: calc(50% - #{$length-2});
 	margin-bottom: $length-2;
 

@@ -10,6 +10,11 @@ var uploadFiles = function(node, file) {
 	    contentType: false,
 	    dataType: "json",
 	    success: function(data, status, jqXHR) {
+	        //コンポーネントを追加
+	        if(!$(node).hasClass('one')){
+	        	$new = $(node).clone(true).insertAfter(node);
+	        	$new.children('.close').css('display', 'none');	
+	        }
 	        //画像を設定
 	        $img = $(node).find('img');
 	        $img.attr('src', data.url);
@@ -18,13 +23,10 @@ var uploadFiles = function(node, file) {
 
 	        //閉じるボタンを有効化
 	        $(node).find('.close').css('display', 'block');
-	        //コンポーネントを追加
-	        if(!$(node).hasClass('one')){
-	        	$(node).clone(true).insertAfter(node).children('.close').css('display', 'none');	
-	        }
 	    },
 	    error: function(jqXHR, textStatus, errorThrown){
-	    	alert(errorThrown);
+	    	console.log(errorThrown);
+	    	//alert(jqXHR + ":" + textStatus + ":" + errorThrown);
 	    },
 	});
 }
@@ -152,7 +154,7 @@ var initTemplate = function (){
     });
     $('.hy-form-file').each(function(){
     	var src = $(this).find("img").attr("src");
-    	if(src.length >= 1){
+    	if(src != null && src.length >= 1){
     		$(this).children('.close').css('display', 'block');
     	}
     });
@@ -165,30 +167,31 @@ var initTemplate = function (){
 		$(this).find('.star:not(.disable)').click(function(event) {
 			var on = $(this).hasClass('on')
 			var toUrl = $(this).data('url');
-			if(on){
-				$(this).removeClass('on');
-			}else{
-				$(this).addClass('on');
-			}
 			on = !on;
 
 			$.ajax({
 			    type: 'GET',
-			    url: toUrl + 'mode=' + on,
+			    url: toUrl + '?mode=' + on,
 			    timeout: 10000,
 			    cache: false,
 			    dataType: 'json',
 			    context: this,
-			    complete: function(response, textStatus, jqXHR) {
+			    success: function(data, textStatus, jqXHR) {
+			    	var result = data.result;
+			    	if(result == "false"){
+			    		return;
+			    	}
 			    	var $numberField = $(this).parent().children('.number');
 					var num = $numberField.text();
 					if(on){
 						var newNum = Number(num) + 1;
+						$(this).removeClass('on');
 					}else{
-						var newNum = Number(num) - 1;	
+						var newNum = Number(num) - 1;
+						$(this).addClass('on');	
 					}
 					$numberField.text(newNum);
-				},
+				}
 			});
 			return false;
 		});
@@ -217,16 +220,17 @@ var initTemplate = function (){
 		$(this).hide();
 	});
 	$(".hy-tab-content > *:first-child").each(function(){
-		$(this).show(300);
+		$(this).show();	
 	});
 	$(".hy-tab-menu > button").click(function(){
-		console.log("fire");
 		$(".hy-tab-menu > button").addClass("inactive");	
 		$(this).removeClass("inactive");
 
 		var targetId = $(this).attr('for');
-		$(".hy-tab-content > *").hide(100);
-		$("#" + targetId).show(300);
+		$(".hy-tab-content > *").fadeOut(300);
+		setTimeout(function(){
+			$("#" + targetId).fadeIn(300);	
+		}, 300);
 	});
 	$(".hy-tab-menu > button[for='" + $(location).attr('hash').slice(1) + "']").trigger('click');
 
@@ -276,6 +280,59 @@ var initTemplate = function (){
 	$.datepicker.setDefaults( $.datepicker.regional[ "ja" ] );
     $( ".hy-datepicker" ).datepicker();
 
+
+    //
+    // select box
+    // 
+    $('select.hy-select').each(function(index, el) {
+    	var datasource = $(this).data('datasource');
+    	//if(false){
+    	if(datasource != null){
+			$(this).select2({
+			  tags: true,
+			  ajax: {
+			    url: datasource,
+			    dataType: 'json',
+			    delay: 250,
+			    data: function (params) {
+			      return {
+			        q: params.term,
+			        // page: params.page
+			      };
+			    },
+			    processResults: function (data, params) {
+			      params.page = params.page || 1;
+			      return {
+			        results: data.items,
+			        // pagination: {
+			        //   more: (params.page * 30) < data.total_count
+			        // }
+			      };
+			    },
+			    cache: true
+			  },
+			  escapeMarkup: function (markup) { return markup; }, // let our custom formatter work
+			  minimumInputLength: 1,
+			});
+    	}else if($(this).attr('tagged') == "true"){
+    		$(this).select2({
+    			tags: true
+    		});
+    	}else{
+    		$(this).select2();
+    	}
+    });
+
+
+    //
+    // hy-warning
+    //
+    $('.hy-warning').each(function(index, el) {
+    	$(this).click(function(event) {
+    		$message = $(this).data('warning');
+    		return confirm($message)
+    	});
+    });
 }
 
 

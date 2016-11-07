@@ -237,6 +237,7 @@ p {
   display: inline-block;
   height: 56px;
   width: 56px;
+  border-radius: 50%;
 }
 .hy-top-menu > .right-menu > a > img + span {
   margin-left: 8px;
@@ -327,7 +328,6 @@ p {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  padding-left: 8px;
   padding-right: 8px;
 }
 .hy-footer > div > ul a:hover {
@@ -353,7 +353,7 @@ p {
   position: relative;
   display: inline-block;
 }
-.hy-form-text > input[type="text"], .hy-form-text-label > input[type="text"], .hy-form-text-button > input[type="text"], .hy-form-textarea-button > input[type="text"], .hy-form-text > input[type="email"], .hy-form-text-label > input[type="email"], .hy-form-text-button > input[type="email"], .hy-form-textarea-button > input[type="email"], .hy-form-text > input[type="password"], .hy-form-text-label > input[type="password"], .hy-form-text-button > input[type="password"], .hy-form-textarea-button > input[type="password"], .hy-form-text > input[type="number"], .hy-form-text-label > input[type="number"], .hy-form-text-button > input[type="number"], .hy-form-textarea-button > input[type="number"], .hy-form-text > input[type="date"], .hy-form-text-label > input[type="date"], .hy-form-text-button > input[type="date"], .hy-form-textarea-button > input[type="date"], .hy-form-text > textarea, .hy-form-text-label > textarea, .hy-form-text-button > textarea, .hy-form-textarea-button > textarea {
+.hy-form-text > input[type="text"], .hy-form-text-label > input[type="text"], .hy-form-text-button > input[type="text"], .hy-form-textarea-button > input[type="text"], .hy-form-text > input[type="email"], .hy-form-text-label > input[type="email"], .hy-form-text-button > input[type="email"], .hy-form-textarea-button > input[type="email"], .hy-form-text > input[type="password"], .hy-form-text-label > input[type="password"], .hy-form-text-button > input[type="password"], .hy-form-textarea-button > input[type="password"], .hy-form-text > input[type="number"], .hy-form-text-label > input[type="number"], .hy-form-text-button > input[type="number"], .hy-form-textarea-button > input[type="number"], .hy-form-text > input[type="date"], .hy-form-text-label > input[type="date"], .hy-form-text-button > input[type="date"], .hy-form-textarea-button > input[type="date"], .hy-form-text > select, .hy-form-text-label > select, .hy-form-text-button > select, .hy-form-textarea-button > select, .hy-form-text > span.select2 > span > span, .hy-form-text-label > span.select2 > span > span, .hy-form-text-button > span.select2 > span > span, .hy-form-textarea-button > span.select2 > span > span, .hy-form-text > textarea, .hy-form-text-label > textarea, .hy-form-text-button > textarea, .hy-form-textarea-button > textarea {
   min-width: 400px;
   min-height: 40px;
   border: 1px #929292;
@@ -366,7 +366,7 @@ p {
   box-shadow: inner 0 0 4px rgba(0, 0, 0, 0.2);
   outline: none;
 }
-.hy-form-text > input[type="text"]:focus, .hy-form-text-label > input[type="text"]:focus, .hy-form-text-button > input[type="text"]:focus, .hy-form-textarea-button > input[type="text"]:focus, .hy-form-text > input[type="email"]:focus, .hy-form-text-label > input[type="email"]:focus, .hy-form-text-button > input[type="email"]:focus, .hy-form-textarea-button > input[type="email"]:focus, .hy-form-text > input[type="password"]:focus, .hy-form-text-label > input[type="password"]:focus, .hy-form-text-button > input[type="password"]:focus, .hy-form-textarea-button > input[type="password"]:focus, .hy-form-text > input[type="number"]:focus, .hy-form-text-label > input[type="number"]:focus, .hy-form-text-button > input[type="number"]:focus, .hy-form-textarea-button > input[type="number"]:focus, .hy-form-text > input[type="date"]:focus, .hy-form-text-label > input[type="date"]:focus, .hy-form-text-button > input[type="date"]:focus, .hy-form-textarea-button > input[type="date"]:focus, .hy-form-text > textarea:focus, .hy-form-text-label > textarea:focus, .hy-form-text-button > textarea:focus, .hy-form-textarea-button > textarea:focus {
+.hy-form-text > input[type="text"]:focus, .hy-form-text-label > input[type="text"]:focus, .hy-form-text-button > input[type="text"]:focus, .hy-form-textarea-button > input[type="text"]:focus, .hy-form-text > input[type="email"]:focus, .hy-form-text-label > input[type="email"]:focus, .hy-form-text-button > input[type="email"]:focus, .hy-form-textarea-button > input[type="email"]:focus, .hy-form-text > input[type="password"]:focus, .hy-form-text-label > input[type="password"]:focus, .hy-form-text-button > input[type="password"]:focus, .hy-form-textarea-button > input[type="password"]:focus, .hy-form-text > input[type="number"]:focus, .hy-form-text-label > input[type="number"]:focus, .hy-form-text-button > input[type="number"]:focus, .hy-form-textarea-button > input[type="number"]:focus, .hy-form-text > input[type="date"]:focus, .hy-form-text-label > input[type="date"]:focus, .hy-form-text-button > input[type="date"]:focus, .hy-form-textarea-button > input[type="date"]:focus, .hy-form-text > select:focus, .hy-form-text-label > select:focus, .hy-form-text-button > select:focus, .hy-form-textarea-button > select:focus, .hy-form-text > span.select2 > span > span:focus, .hy-form-text-label > span.select2 > span > span:focus, .hy-form-text-button > span.select2 > span > span:focus, .hy-form-textarea-button > span.select2 > span > span:focus, .hy-form-text > textarea:focus, .hy-form-text-label > textarea:focus, .hy-form-text-button > textarea:focus, .hy-form-textarea-button > textarea:focus {
   border: solid 1px #00b3de;
 }
 .hy-form-text > input[type="date"], .hy-form-text-label > input[type="date"], .hy-form-text-button > input[type="date"], .hy-form-textarea-button > input[type="date"] {
@@ -798,6 +798,10 @@ button.hy-form-button, .hy-form-text-button > button, .hy-form-textarea-button >
   border-color: #929292;
   color: white;
 }
+.hy-pagenate > a.disable:hover {
+  color: #929292;
+  background-color: transparent;
+}
 .hy-pagenate > a.prev:before {
   content: "<";
   margin-right: 8px;
@@ -806,7 +810,7 @@ button.hy-form-button, .hy-form-text-button > button, .hy-form-textarea-button >
   content: ">";
   margin-left: 8px;
 }
-.hy-pagenate > .jump:nth-child(4) {
+.hy-pagenate > .jump.now {
   -webkit-transition: all .3s;
   transition: all .3s;
   background-color: #929292;
@@ -815,17 +819,17 @@ button.hy-form-button, .hy-form-text-button > button, .hy-form-textarea-button >
   color: white;
   border-color: transparent;
 }
-.hy-pagenate > .jump:nth-child(4):hover, .hy-pagenate > .jump:nth-child(4).inactive {
+.hy-pagenate > .jump.now:hover, .hy-pagenate > .jump.now.inactive {
   background-color: white;
   border-color: #929292;
   color: #929292;
 }
-.hy-pagenate > .jump:nth-child(4).inactive:hover {
+.hy-pagenate > .jump.now.inactive:hover {
   background-color: #929292;
   border: 1px solid #929292;
   color: white;
 }
-.hy-pagenate > .jump:nth-child(4):hover {
+.hy-pagenate > .jump.now:hover {
   background-color: transparent;
   border-color: transparent;
 }
@@ -1122,6 +1126,39 @@ a.hy-read-more.hy-form-button:after {
   right: -100%;
 }
 
+.hy-small-slider {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  position: relative;
+  width: 120px;
+  height: 104px;
+  display: inline-block;
+  overflow: hidden;
+  margin-right: 8px;
+  margin-bottom: 8px;
+}
+.hy-small-slider:hover {
+  z-index: 1;
+  transform: scale(1.05);
+}
+.hy-small-slider .hy-imagewrapper {
+  height: 104px;
+  width: 120px;
+}
+
+.hy-imagewrapper {
+  position: absolute;
+  overflow: hidden;
+}
+.hy-imagewrapper > img {
+  position: absolute;
+  margin: auto;
+  height: 100%;
+  width: auto !important;
+  left: -100%;
+  right: -100%;
+}
+
 .hy-tag {
   -webkit-transition: all .3s;
   transition: all .3s;
@@ -1174,9 +1211,12 @@ a.hy-read-more.hy-form-button:after {
   width: 192px;
   height: 192px;
   border: 5px dotted #929292;
+  margin-right: 16px;
+  margin-bottom: 16px;
 }
 .hy-form-files > .hy-form-file > span {
   display: inline-block;
+  position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -1184,12 +1224,12 @@ a.hy-read-more.hy-form-button:after {
 }
 .hy-form-files > .hy-form-file > span > img {
   position: absolute;
-  height: 100%;
-  width: auto;
-  left: -100%;
-  right: -100%;
-  margin: auto;
-  z-index: 2;
+  height: 100% !important;
+  width: auto !important;
+  left: -100% !important;
+  right: -100% !important;
+  margin: auto !important;
+  z-index: 2 !important;
 }
 .hy-form-files > .hy-form-file:before {
   content: "Drop your file";
@@ -1235,6 +1275,7 @@ a.hy-read-more.hy-form-button:after {
 
 .hy-half {
   display: inline-block;
+  vertical-align: top;
   width: calc(50% - 16px);
   margin-bottom: 16px;
 }
