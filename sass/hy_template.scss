@@ -1312,6 +1312,23 @@ a.hy-read-more {
 	}
 }
 
+.hy-releted-slider{
+	display: inline-block;
+	position: relative;
+	height: 200px;
+	width: 300px;
+	overflow:hidden;
+
+	& > img{
+		position: absolute;
+		height: 200px;
+		width: 400px;
+		margin: auto;
+		left: -100%;
+		right: -100%;
+	}
+}
+
 .hy-imagewrapper{
 	position: absolute;
 	overflow: hidden;
