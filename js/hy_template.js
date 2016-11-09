@@ -167,6 +167,11 @@ var initTemplate = function (){
 		$(this).find('.star:not(.disable)').click(function(event) {
 			var on = $(this).hasClass('on')
 			var toUrl = $(this).data('url');
+			if(on){
+				$(this).removeClass('on');
+			}else{
+				$(this).addClass('on');		
+			}
 			on = !on;
 
 			$.ajax({
@@ -185,10 +190,8 @@ var initTemplate = function (){
 					var num = $numberField.text();
 					if(on){
 						var newNum = Number(num) + 1;
-						$(this).removeClass('on');
 					}else{
 						var newNum = Number(num) - 1;
-						$(this).addClass('on');	
 					}
 					$numberField.text(newNum);
 				}
@@ -218,18 +221,22 @@ var initTemplate = function (){
 	$(".hy-tab-menu > button:first-child").removeClass("inactive");
 	$(".hy-tab-content > *").each(function(){
 		$(this).hide();
+		$(this).find('.slick-slider').slick('unslick');
 	});
 	$(".hy-tab-content > *:first-child").each(function(){
-		$(this).show();	
+		$(this).show();
+		$(this).find('.hy-slider-in-tab').slick();
 	});
 	$(".hy-tab-menu > button").click(function(){
 		$(".hy-tab-menu > button").addClass("inactive");	
 		$(this).removeClass("inactive");
 
 		var targetId = $(this).attr('for');
-		$(".hy-tab-content > *").fadeOut(300);
+		$(".hy-tab-content > *").hide();
+		$(".hy-tab-content").find('.slick-slider').slick('unslick');
 		setTimeout(function(){
-			$("#" + targetId).fadeIn(300);	
+			$("#" + targetId).fadeIn(300);
+			$("#" + targetId).find('.hy-slider-in-tab').slick();
 		}, 300);
 	});
 	$(".hy-tab-menu > button[for='" + $(location).attr('hash').slice(1) + "']").trigger('click');
